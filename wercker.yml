@@ -22,5 +22,5 @@ deploy:
         skip_ssl: true
         appname: pcf-solera-workshop-blue
         alt_appname: pcf-solera-workshop-green
-        domain: cfapps.io
+        domain: app.cloud.rick-ross.com 
         hostname: pcf-solera-workshop
