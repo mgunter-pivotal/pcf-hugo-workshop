@@ -1,4 +1,4 @@
-baseurl = "http://pcf-ford-workshop.cfapps.io/"
+baseurl = "http://pcf-solera-workshop.cfapps.io/"
 languageCode = "en-us"
 title = "Cloud Foundry Workshop"
 
@@ -28,12 +28,12 @@ copyright = "© Copyright 2017 Pivotal Software, Inc. All Rights Reserved."
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "Home"
-    description = "Ford Dearborn · 26 Jun  1:00PM - 4:00PM PM" # optional
+    description = "Solera · September 6 & 7 9:00AM - 4:00PM PM" # optional
     twitter = "pivotal" # optional
-    customer = "ford"
+    customer = "solera""
     # headerCover = "images/headerCover.png" # optional
     # footerCover = "images/footerCover.png" # optional
-    googleAnalyticsUserID = "UA-75133856-1" # optional
+    googleAnalyticsUserID = "" # optional
 
 [permalinks]
   post = "/:year/:month/:day/:title/" # optional

@@ -2,7 +2,7 @@
 
 Categories = ["lab"]
 Tags = ["cf","microservices","cloudfoundry"]
-date = "2016-03-15T14:54:11-04:00"
+date = "2017-08-29T07:49:11-04:00"
 title = "Lab : Build and Deploy Apps on PCF"
 weight = 2
 
@@ -60,7 +60,7 @@ Prerequisites
 
 5. Environment Proxy Setup (Optional depending on network configuration)
 
-	If you are connected to the Ford Network, that requires using a proxy, you'll need to set the appropriate environment variables. In the repository there is a file called *setenv.bat*.
+	If you are connected to a network that requires using a proxy, you'll need to set the appropriate environment variables. In the repository there is a file called *setenv.bat*.
 
 	Open up a terminal/command prompt, change directory to the top level folder and run the setenv.bat file.
 
@@ -78,18 +78,15 @@ Prerequisites
 
 6. Gradle Environment Setup (Optional depending on network configuration)
 
-	In a terminal/command prompt, copy the gradle.ford to gradle.properties
+	Create or edit the proxy information in gradle.properties. 
 
-	For Mac
+	For example:
 	```
-	cp gradle.ford gradle.properties
+    systemProp.http.proxyHost=yourproxy.example.com
+    systemProp.http.proxyPort=8080
+    systemProp.https.proxyHost=yourproxy.example.com
+    systemProp.https.proxyPort=8080
 	```
-
-	For Windows
-	```
-	copy gradle.ford gradle.properties
-	```
-
 
 Steps
 --
@@ -113,15 +110,6 @@ __NOTE__
 ##### Build the app
 By this point, you should have cloned (or forked, or downloaded) the [workspace repo](https://github.com/Pivotal-Field-Engineering/pcf-workspace-devops/).  Now you will build the project and deploy it to Cloud Foundry.
 
-__NOTE__
-
-In case you have HTTP_PROXY and HTTPS_PROXY create a gradle.properties file in the code directory
-
-      systemProp.http.proxyHost=www.somehost.org
-      systemProp.http.proxyPort=8080
-      systemProp.http.proxyUser=userid
-      systemProp.http.proxyPassword=password
-
 For Linux/Mac:
 
 
@@ -139,12 +127,11 @@ Windows:
 ### Step 2
 ##### Login into Pivotal Cloud Foundry
 
-The students have userId's (student1-student25) and the passwords will be distributed in the workshop.
-Each student is assigned an userId within their own organization (student1-org). Please refer to the handout you have been given.
+Each participant will have their own user ids and passwords.  
 
 ````
-cf login -a https://api.run.haas-112.pez.pivotal.io --skip-ssl-validation
-  Email: student1
+cf login -a https://api.example.com --skip-ssl-validation
+  Email: myuserid
   Password: ••••••••
 
   Select a space (or press enter to skip):
@@ -156,7 +143,7 @@ cf login -a https://api.run.haas-112.pez.pivotal.io --skip-ssl-validation
 
 ````
 
-Login to the App Console at https://apps.run.haas-112.pez.pivotal.io
+Login to the App Console at https://apps.example.com
 
 <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
 
@@ -169,12 +156,12 @@ Login to the App Console at https://apps.run.haas-112.pez.pivotal.io
 
     ```bash
     $ cd cities-hello
-    $ cf push <studentXX>-cities-hello
+    $ cf push <yourinitials>-cities-hello
     // This will give an output which is similar to this
     requested state: started
     instances: 1/1
     usage: 512M x 1 instances
-    urls: cities-hello-lactiferous-unanswerableness.run.haas-112.pez.pivotal.io
+    urls: cities-hello-lactiferous-unanswerableness.run.example.com
     last uploaded: Mon Jun 15 14:53:10 UTC 2015
     stack: cflinuxfs2
     ```
@@ -185,7 +172,7 @@ Login to the App Console at https://apps.run.haas-112.pez.pivotal.io
 
 3. If you haven't already it is a good time to walk through the AppsManager:
 
-        https://apps.run.haas-112.pez.pivotal.io
+        https://apps.example.com
 
 ##### Recap: Part 1
 
@@ -214,7 +201,7 @@ The cities-service app requires a database service to store and fetch cities inf
 
 2. Create a mysql service, name it as `<YOUR INITIALS>-cities-db`
 
-    You can create the service from the `cli` or launch the App Manager-> Select the Development Space [https://apps.run.haas-112.pez.pivotal.io](https://apps.run.haas-112.pez.pivotal.io) and login.
+    You can create the service from the `cli` or launch the App Manager-> Select the Development Space [https://apps.run.example.com](https://apps.run.example.com) and login.
     Navigate to the marketplace and see the available services.
 
     <img src="/images/pcf-marketplace.png" alt="Marketplace Services" style="width: 70%;"/>
@@ -223,7 +210,7 @@ The cities-service app requires a database service to store and fetch cities inf
 
     ````bash
     $ cf marketplace // check if mysql service is available
-    $ cf create-service p-mysql 100mb <studentXX>-cities-db
+    $ cf create-service p-mysql 100mb <YOUR INITIALS>-cities-db
     ````
 
 3. Launch the DB console via the `Manage` link in the App Manager.  Note the database is empty.
@@ -235,13 +222,13 @@ The cities-service app requires a database service to store and fetch cities inf
 
     ````bash
     $ cd ../cities-service  (on Windows cd ..\cities-service)
-    $ cf push <studentXX>-cities-service -i 1 -m 512M -p build/libs/cities-service.jar
+    $ cf push <YOUR INITIALS>-cities-service -i 1 -m 512M -p build/libs/cities-service.jar
     ````
 2. Check the logs to learn more about why the application is not starting.
     You can look at the recent logs from the cli or open up the App Console and view the log files for the app.
 
     ````bash
-    $ cf logs <studentXX>-cities-service --recent
+    $ cf logs <YOUR INITIALS>-cities-service --recent
     ````
     <img src="/images/pcf-console-log.png" alt="Logs for the App" style="width:70%;"/>
 
@@ -254,13 +241,13 @@ The cities-service app requires a database service to store and fetch cities inf
     You can bind from the App Manager or from the `cli`
 
     ````bash
-    $ cf bind-service <studentXX>-cities-service <studentXX>-cities-db
+    $ cf bind-service <YOUR INITIALS>-cities-service <YOUR INITIALS>-cities-db
     ````
 
 3. Restart your cities-service application to inject the new database.
 
     ````bash
-    $ cf restart <studentXX>-cities-service
+    $ cf restart <YOUR INITIALS>-cities-service
     ````
 
     Notice that the application is now running.
@@ -269,7 +256,7 @@ The cities-service app requires a database service to store and fetch cities inf
     You can do it from App Manager or from the `cli`
 
     ````bash
-    $ cf env <studentXX>-cities-service
+    $ cf env <YOUR INITIALS>-cities-service
     ````
 
 5. Check the MySQL database through the `Manage` link in the App Manager to see that it now contains data.
@@ -300,12 +287,12 @@ Next, lets push the cities-service app with a manifest to help automate deployme
     On Windows
 
     ````bash
-    notepad.exe manifest.service
+    wordpad.exe manifest.service
     ````
 
 3. Set the name of the app, the amount of memory, the number of instances, and the path to the .jar file.
-*Be sure to name your application '<studentXX>-cities-service' e.g. student1-cities-service *
-4. Add the services binding `<studentXX>-cities-db` to your deployment manifest for cities-service .
+*Be sure to name your application '<YOUR INITIALS>-cities-service' e.g. rr-cities-service *
+4. Add the services binding `<YOUR INITIALS>-cities-db` to your deployment manifest for cities-service .
 5. Test your manifest by re-pushing your app with no parameters:
 
     ````bash
@@ -320,16 +307,16 @@ Next, lets push the cities-service app with a manifest to help automate deployme
     ````bash
        // This will list your apps and the last column is the route.
        $ cf apps
-          url: instructor-cities-service.run.haas-112.pez.pivotal.io  
+          url: instructor-cities-service.run.example.com  
           // Note - Use HTTPS
-       $ curl -i -k https://instructor-cities-service.run.haas-112.pez.pivotal.io
+       $ curl -i -k https://instructor-cities-service.run.example.com
     ````
 
     For Windows
     ````
-       Open the URL (e.g. https://instructor-cities-service.run.haas-112.pez.pivotal.io) in a browser window
+       Open the URL (e.g. https://instructor-cities-service.run.example.com) in a browser window
     ````
-    We must be able to access your application at https://instructor-cities-service.run.haas-112.pez.pivotal.io for the next steps to work properly.
+    We must be able to access your application at https://instructor-cities-service.run.example.com for the next steps to work properly.
 
 __NOTE__
 
@@ -342,8 +329,8 @@ In this exercise we have used a different naming convention.
 
 Learning about how your application is performing is critical to help you diagnose and troubleshoot potential issues. Cloud Foundry gives you options for viewing the logs.
 
-Open the metrics dashboard at https://metrics.run.haas-112.pez.pivotal.io/
-Use you login id/password which is your student id.
+Open the metrics dashboard at https://metrics.run.example.com/
+Use you same login id/password as you did to log into PCF.
 
 <img src="/images/pcf-metrics.png" alt="Metrics" style="width: 70%;"/>
 
@@ -358,7 +345,7 @@ You can Monitor your Container Metrics, Network Metrics and Events for your app.
 View the environment variable and explanation of [VCAP Env](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#view-env)
 
   ````bash
-  $ cf env <studentXX>-cities-service
+  $ cf env <YOUR INITIALS>-cities-service
   ````
 
 
@@ -439,7 +426,7 @@ Scaling your application horizontally means that you are adding application inst
 
 Lets vertically scale the application to 1 GB of RAM.
   ````bash
-  $ cf scale <studentXX>-cities-service -m 1G
+  $ cf scale <YOUR INITIALS>-cities-service -m 1G
   ````
 
 
@@ -447,13 +434,13 @@ Now scale your application down to 512 MB.
 
 Next, lets scale up your application to 2 instances
   ````bash
-  $ cf scale <studentXX>-cities-service -i 2
+  $ cf scale <YOUR INITIALS>-cities-service -i 2
   ````
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
   ````bash
-  $ cf app <studentXX>-cities-service
+  $ cf app <YOUR INITIALS>-cities-service
   ````
 
 
@@ -470,15 +457,15 @@ You can also use the Autoscaler service from the marketplace and bind it to your
 To verify that the application is running, use the following curl commands (or use your browser) to retrieve data from the service or use a browser to access the URL:
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.cfapps.haas-112.pez.pivotal.io/cities
+  $ curl -i -k https://<YOUR INITIALS>-cities-service.example.com/cities
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.cfapps.haas-112.pez.pivotal.io/cities/49
+  $ curl -i -k https://<studentXX>-cities-service.example.com/cities/49
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.cfapps.haas-112.pez.pivotal.io/cities?size=5
+  $ curl -i -k https://<studentXX>-cities-service.example.com/cities?size=5
   ````
 
   For Windows, use your browser and visit the corresponding URLs.
@@ -526,9 +513,9 @@ In this section we will create a backend microservice end point for cities-servi
   // Use the interactive prompt to create user defined service
   // It will prompt you for the parameters
 
-  $ cf create-user-provided-service <studentXX>-cities-ws -p "citiesuri"
+  $ cf create-user-provided-service <YOUR INITIALS>-cities-ws -p "citiesuri"
 
-  citiesuri>   http://<studentXX>-cities-service.cfapps.haas-112.pez.pivotal.io/
+  citiesuri>   http://<YOUR INIITALS>-cities-service.example.com/
 
   Creating user provided service....
   ````
@@ -543,7 +530,7 @@ A `manifest.yml` is included in the cities-ui app.  Edit this manifest with your
 
   ````bash
   $ cd cities-ui
-  $ nano manifest.yml (Or your favorite editor) (on Windows use notepad manifest.yml)
+  $ nano manifest.yml (Or your favorite editor) (on Windows use wordpad manifest.yml)
 
   ---
   applications:
@@ -569,7 +556,7 @@ Note the URL once the application has been successfully pushed.
 
 ````bash
 ----
-$ cf env <studentXX>-cities-ui
+$ cf env <YOUR INIITALS>-cities-ui
 
 System-Provided:
 {
@@ -578,7 +565,7 @@ System-Provided:
    {
     "credentials": {
      "tag": "cities",
-     "uri": "https://rj-cities-service.haas-112.pez.pivotal.io/"
+     "uri": "https://rj-cities-service.example.com/"
     },
     "label": "user-provided",
     "name": "cities-ws",
@@ -593,7 +580,7 @@ System-Provided:
  "VCAP_APPLICATION": {
   "application_name": "rj-cities-ui",
   "application_uris": [
-   "rj-cities-ui.run.haas-112.pez.pivotal.io"
+   "rj-cities-ui.example.com"
   ],
   "application_version": "dceb111b-3a68-45ad-83fd-3b8b836ebbe7",
   "limits": {
@@ -605,7 +592,7 @@ System-Provided:
   "space_id": "56e1d8ef-e87f-4b1c-930b-e7f46c00e483",
   "space_name": "development",
   "uris": [
-   "rj-cities-ui.run.haas-112.pez.pivotal.io"
+   "rj-cities-ui.example.com"
   ],
   "users": null,
   "version": "dceb111b-3a68-45ad-83fd-3b8b836ebbe7"
@@ -662,19 +649,19 @@ First push a new version of the app with a blue route.
 
     $ cd cities-hello
     // Push the app version v1 with the hostname as blue
-    $ cf push studentXXX-cities-hello-v1 --hostname studentXXX-cities-hello-blue -f manifest.hello
+    $ cf push <YOUR INITIALS>-cities-hello-v1 --hostname <YOUR INITIALS>-cities-hello-blue -f manifest.hello
     // Map your outside route to this blue version
-    $ cf map-route studentXXX-cities-hello-v1 cfapps.haas-112.pez.pivotal.io --hostname studentXXX-cities-hello
+    $ cf map-route <YOUR INITIALS>-cities-hello-v1 example.com --hostname <YOUR INITIALS>-cities-hello
     $ cf apps // Check the apps and the routes
 
 Next, you can push a new version of the app with a green route.
 
     // Push the app version v2 with the hostname as green
-    $ cf push studentXXX-cities-hello-v2 --hostname studentXXX-cities-hello-green -f manifest.yml
+    $ cf push <YOUR INITIALS>-cities-hello-v2 --hostname <YOUR INITIALS>-cities-hello-green -f manifest.yml
     // Map the outside route to this green version. Now your outside route is mapped to both blue and green
-    $ cf map-route studentXXX-cities-hello-v2 cfapps.haas-112.pez.pivotal.io --hostname studentXXX-cities-hello
+    $ cf map-route <YOUR INITIALS>-cities-hello-v2 example.com --hostname <YOUR INITIALS>-cities-hello
     // Unmap the outside route to the blue version. All the traffic is now directed to v2
-    $ cf unmap-route studentXXX-cities-hello-v1 cfapps.haas-112.pez.pivotal.io --hostname studentXXX-cities-hello
+    $ cf unmap-route <YOUR INITIALS>-cities-hello-v1 example.com --hostname <YOUR INITIALS>-cities-hello
 
 
 ##### Option 2
@@ -699,11 +686,11 @@ Download the latest release of the autopilot plugin from the github releases pag
 
     $ cd cities-hello (on Windows cd cities-hello)
     // Append the build number to the app Name
-    $ nano manifest.hello // Change the app name and append the build number, on Windows use notepad manifest.hello
+    $ nano manifest.hello // Change the app name and append the build number, on Windows use wordpad manifest.hello
 
 <img src="/images/pcf-blue-green-b100.png" alt="Blue Green Deployment Build" style="width: 50%;"/>
 
-    $ cf zero-downtime-push <studentXX>-cities-hello -f manifest.hello
+    $ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
 
 ##### Option 3 (This is as bash script and works only on Linux/OSX)
 
@@ -714,14 +701,14 @@ If you would like to inject build numbers in your app names here is a script you
 
   ````bash
 
-  $ ./blue-green.sh  cities-hello 1001 run.haas-112.pez.pivotal.io
+  $ ./blue-green.sh  cities-hello 1001 <YOUR INITIALS>
   $ cf apps // You should see your app build 1001 and the Route
   ````
 
   Now push the new build 1002 of the app
 
   ````bash
-  $ ./blue-green.sh  cities-hello 1002 run.haas-112.pez.pivotal.io
+  $ ./blue-green.sh  cities-hello 1002 example.com
   $ cf apps // You should see your app build 1002 and the same route mapped to the new build
 
   ````
@@ -743,7 +730,3 @@ In this workshop we saw how to build, deploy, bind, scale, monitor apps on Cloud
 
 ### Q/A
 
-### Feedback
-
-
-Please provide your feedback using this form [Feedback Form](https://docs.google.com/a/pivotal.io/forms/d/1qWlLtTuoULomw9DAW0tuhn7YVWXwVILaMTNKfXkcq0s/viewform?usp=send_form)

@@ -1,16 +1,16 @@
 +++
 Categories = ["agenda","workshop"]
 Tags = ["logistics","speakers"]
-date = "2016-03-15T16:23:23+09:00"
-title = "Welcome to the Pivotal Cloud Foundry Workshop@Ford"
+date = "2017-08-29T07:44:03+04:00"
+title = "Welcome to the Pivotal Cloud Foundry Workshop @ Solera"
 type = "Introduction"
 weight = 1
 +++
 
 ##### Date and Time
-Date: **May 10 2017**
+Date: **September 6 2017**
 
-Time: **9:00PM - 12:30PM**
+Time: **9:00PM - 4:00PM**
 
 Click to get the Agenda, Prerequisites and Setup for the workshop.
 
@@ -18,17 +18,29 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 
 
 #### Agenda
-|  |  |
-|------|------|
-| **9:00 PM–10:00 PM** | Config Server Service |    
-| **10:10 AM–11:00 PM** | Registry Service |
-| **11:10 AM–12:00 PM** | Circuit Breaker Service |
-| **12:10 PM–12:30 PM** | Wrap Up, Q&A, Feedback  |
+* Introductions
+* Marketplace Observations
+* Cloud Native Architecture
+* Introduction to Pivotal Cloud Foundry
+* PCF at Audatex 
+* Lab: Deploying applications
+* Services
+* Lab: Bind to a Service
+* Logging and Metrics
+* Lab: Scale an Application
+* Lab: Bind to an external service
+* Domains and Routing
+* Lab: Blue Green Deployments
+* Buildpacks
+* Spring Cloud Services 
+* Lab: Spring Cloud Services
+* Concourse
 
 ---
+
 #### Speakers
-+ Todd Hall - Ford
-+ Rajesh Jain - Platform Architect at Pivotal
++ Rick Ross - Platform Architect at Pivotal
++ Brian Byers - Platform Architect at Pivotal
 
 
 ---
@@ -46,41 +58,21 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 4. Curl for [Windows](http://winampplugins.co.uk/curl/)
    Or for [Mac] (http://pdb.finkproject.org/pdb/package.php/curl)
 
-5. Use Workshop PCF Env or Pivotal Web Services Account.  Create a free trial account here [Pivotal Web Services](http://run.pivotal.io/)
-
+5. An account on your PCF Environment
 
 ##### Setup
 
 1. Install the Prerequisites software (cf cli)
 
-2. Check if you are able to use the cf cli to connect to the PCF Workshop Env. Alternatively, you can create a PWS account and check the firewall/connectivity before the Workshop
+2. Check if you are able to use the cf cli to connect your PCF  Environment. 
 
-          cf login -a https://api.run.haas-123.pez.pivotal.io  --skip-ssl-validation
+          cf login -a https://api.example.com  --skip-ssl-validation
 
 3. Check if you are able to connect to Git repo and download / clone the repo using CLI
 4. Login to the App Manager Console at
 
-        https://apps.run.haas-123.pez.pivotal.io
+        https://apps.example.com
 
-5. Note: Tiles preinstalled in the PCF Workshop environment which we will be using the workshop. You don't need any setup for these tiles.
-
-          ER
-          RabbitMQ
-          MySQL
-          Redis
-
-
-
-#### Presentation
-
-
-{{< googleslide "https://docs.google.com/presentation/d/1wNT7il4szv25Tl0KBG4SaetQkwKwyqk_rrQfskDSLgo/embed?start=false&loop=false&delayms=3000" >}}
-
-
-#### Videos
-
-
-{{< youtube xdw_9dADM-4 >}}
 
 
 #### EBooks
