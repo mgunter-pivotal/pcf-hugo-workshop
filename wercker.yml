@@ -19,6 +19,7 @@ deploy:
         password: $CF_PASS
         organization: $CF_ORG
         space: $CF_SPACE
+	skip_ssl: true
         appname: pcf-solera-workshop-blue
         alt_appname: pcf-solera-workshop-green
         domain: cfapps.io
