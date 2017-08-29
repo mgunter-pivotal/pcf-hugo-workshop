@@ -1,4 +1,4 @@
-baseurl = "http://pcf-solera-workshop.app.cloud.rick-ross.com/"
+baseurl = "http://pcf-solera-workshop.app.cloud.rick-ross.com"
 languageCode = "en-us"
 title = "Cloud Foundry Workshop"
 
