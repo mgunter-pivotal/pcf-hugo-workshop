@@ -4,7 +4,7 @@ Categories = ["lab"]
 Tags = ["cf","microservices","cloudfoundry"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab: Binding to Services"
-weight = 3
+weight = 2
 
 +++
 
@@ -104,7 +104,6 @@ __NOTE__
 <br>
 
 ### Step 4
-=======
 ##### Binding Services via the Manifest
 
 Next, lets push the cities-service app with a manifest to help automate deployment.
@@ -154,3 +153,80 @@ __NOTE__
 
 > The default manifest file for an app is `manifest.yml` and it if is present, it is automatically picked without specifying the manifest file option.
 In this exercise we have used a different naming convention.
+
+### Step 5
+##### Environment variables
+
+What happens when you bind your microservice to a backing service? It creates an entry in an environment variable called VCAP_SERVICES. This environment variable uses JSON to store the configuration required to connect to the backing services. For additional information on this topic can be found [here](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#view-env)
+
+  ````bash
+  $ cf env <YOUR INITIALS>-cities-service
+  ````
+
+
+You will get the output similar to this on your terminal
+  ````bash
+  Getting env variables for app rj-cities-service in org Central / space development as rajesh.jain@pivotal.io...
+  OK
+
+  System-Provided:
+  {
+   "VCAP_SERVICES": {
+    "cleardb": [
+     {
+      "credentials": {
+       "hostname": "xxxx",
+       "jdbcUrl": "xxxx",
+       "name": "xxxx",
+       "password": "xxxx",
+       "port": "3306",
+       "uri": "mysql://xxxx?reconnect=true",
+       "username": "xxxx"
+      },
+      "label": "cleardb",
+      "name": "rj-cities-db",
+      "plan": "spark",
+      "tags": [
+       "Data Stores",
+       "Cloud Databases",
+       "Developer Tools",
+       "Data Store",
+       "mysql",
+       "relational"
+      ]
+     }
+    ]
+   }
+  }
+
+  {
+   "VCAP_APPLICATION": {
+    "application_name": "rj-cities-service",
+    "application_uris": [
+     "rj-cities-service.haas-112.pez.pivotal.io"
+    ],
+    "application_version": "c3c35527-424f-4dbc-a4ea-115e1250cc5d",
+    "limits": {
+     "disk": 1024,
+     "fds": 16384,
+     "mem": 512
+    },
+    "name": "rj-cities-service",
+    "space_id": "56e1d8ef-e87f-4b1c-930b-e7f46c00e483",
+    "space_name": "development",
+    "uris": [
+     "rj-cities-service.haas-112.pez.pivotal.io"
+    ],
+    "users": null,
+    "version": "c3c35527-424f-4dbc-a4ea-115e1250cc5d"
+   }
+  }
+
+  User-Provided:
+  SPRING_PROFILES_ACTIVE: cloud
+
+  No running env variables have been set
+
+  No staging env variables have been set
+  ````
+
