@@ -10,7 +10,7 @@ weight = 1
 ##### Date and Time
 Date: **September 6 2017**
 
-Time: **9:00PM - 4:00PM**
+Time: **9:00PM - 4:00**
 
 Click to get the Agenda, Prerequisites and Setup for the workshop.
 
@@ -45,7 +45,7 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 
 ---
 
-##### Prerequisites
+#### Prerequisites
 1. Java SDK 1.8+ [Java from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
           Set the JAVA_HOME variable to the installation dir, in case it is not automatically set
