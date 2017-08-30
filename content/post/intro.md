@@ -10,7 +10,7 @@ weight = 1
 ##### Date and Time
 Date: **September 6 2017**
 
-Time: **9:00PM - 4:00**
+Time: **9:00 AM - 4:00 PM**
 
 Click to get the Agenda, Prerequisites and Setup for the workshop.
 
