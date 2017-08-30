@@ -78,7 +78,7 @@ Prerequisites
 
 6. Gradle Environment Setup (Optional depending on network configuration)
 
-	Create or edit the proxy information in gradle.properties. 
+	Create or edit the proxy information in gradle.properties.
 
 	For example:
 	```
@@ -126,7 +126,7 @@ Windows:
 Each participant will have their own user ids and passwords.  
 
 ````
-cf login -a https://api.example.com --skip-ssl-validation
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
   Email: myuserid
   Password: ••••••••
 
@@ -139,7 +139,7 @@ cf login -a https://api.example.com --skip-ssl-validation
 
 ````
 
-Login to the App Console at https://apps.example.com
+Login to the App Console at https://app.cloud.rick-ross.com
 
 <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
 
@@ -157,7 +157,7 @@ Login to the App Console at https://apps.example.com
     requested state: started
     instances: 1/1
     usage: 512M x 1 instances
-    urls: cities-hello-lactiferous-unanswerableness.run.example.com
+    urls: cities-hello-lactiferous-unanswerableness.sys.cloud.rick-ross.com
     last uploaded: Mon Jun 15 14:53:10 UTC 2015
     stack: cflinuxfs2
     ```
@@ -168,7 +168,7 @@ Login to the App Console at https://apps.example.com
 
 3. If you haven't already it is a good time to walk through the AppsManager:
 
-        https://apps.example.com
+        https://app.cloud.rick-ross.com
 
 ##### Recap: Part 1
 
@@ -183,5 +183,3 @@ Login to the App Console at https://apps.example.com
 * How does the cloud platform understand which runtime to use to run the app?
 
 ***
-
-

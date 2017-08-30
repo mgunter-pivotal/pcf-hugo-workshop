@@ -10,7 +10,7 @@ weight = 2
 
 ### Goal
 
-To demonostrate how to provision and bind services that a microservice can use. 
+To demonostrate how to provision and bind services that a microservice can use.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ You have successfully completed the previous lab.
 Steps
 --
 
-In ths Lab you will deploy a new application that requires a MySQL database. You will create an instance of a database, bind it to your applicaiton via the command line, and then see how to accomplish the same thing by using the applicaiton manifest file. 
+In ths Lab you will deploy a new application that requires a MySQL database. You will create an instance of a database, bind it to your applicaiton via the command line, and then see how to accomplish the same thing by using the applicaiton manifest file.
 
 ### Step 1
 ##### Create a Database from Marketplace
@@ -33,7 +33,7 @@ In ths Lab you will deploy a new application that requires a MySQL database. You
 
 2. Create a mysql service, name it as `<YOUR INITIALS>-cities-db`
 
-    You can create the service from the `cli` or launch the App Manager-> Select the Development Space [https://apps.run.example.com](https://apps.run.example.com) and login.
+    You can create the service from the `cli` or launch the App Manager-> Select the Development Space [https://apps.sys.cloud.rick-ross.com](https://apps.sys.cloud.rick-ross.com) and login.
     Navigate to the marketplace and see the available services.
 
     <img src="/images/pcf-marketplace.png" alt="Marketplace Services" style="width: 70%;"/>
@@ -138,16 +138,16 @@ Next, lets push the cities-service app with a manifest to help automate deployme
     ````bash
        // This will list your apps and the last column is the route.
        $ cf apps
-          url: instructor-cities-service.run.example.com  
+          url: instructor-cities-service.sys.cloud.rick-ross.com  
           // Note - Use HTTPS
-       $ curl -i -k https://instructor-cities-service.run.example.com
+       $ curl -i -k https://instructor-cities-service.sys.cloud.rick-ross.com
     ````
 
     For Windows
     ````
-       Open the URL (e.g. https://instructor-cities-service.run.example.com) in a browser window
+       Open the URL (e.g. https://instructor-cities-service.sys.cloud.rick-ross.com) in a browser window
     ````
-    We must be able to access your application at https://instructor-cities-service.run.example.com for the next steps to work properly.
+    We must be able to access your application at https://instructor-cities-service.sys.cloud.rick-ross.com for the next steps to work properly.
 
 __NOTE__
 
@@ -203,7 +203,7 @@ You will get the output similar to this on your terminal
    "VCAP_APPLICATION": {
     "application_name": "rj-cities-service",
     "application_uris": [
-     "rj-cities-service.haas-112.pez.pivotal.io"
+     "rj-cities-service.app.cloud.rick-ross.com"
     ],
     "application_version": "c3c35527-424f-4dbc-a4ea-115e1250cc5d",
     "limits": {
@@ -215,7 +215,7 @@ You will get the output similar to this on your terminal
     "space_id": "56e1d8ef-e87f-4b1c-930b-e7f46c00e483",
     "space_name": "development",
     "uris": [
-     "rj-cities-service.haas-112.pez.pivotal.io"
+     "rj-cities-service.app.cloud.rick-ross.com"
     ],
     "users": null,
     "version": "c3c35527-424f-4dbc-a4ea-115e1250cc5d"
@@ -229,4 +229,3 @@ You will get the output similar to this on your terminal
 
   No staging env variables have been set
   ````
-

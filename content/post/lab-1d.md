@@ -40,7 +40,7 @@ The cities-ui and cities-client can be both built at once by running `./gradlew 
 
 In this section we will create a backend microservice end point for cities-service.
 
-1. Review the documentation on link:http://docs.pivotal.io/pivotalcf/devguide/services/user-provided.html[User Provided Service Instances]
+1. Review the documentation on [User Provided Service Instances](http://docs.pivotal.io/pivotalcf/devguide/services/user-provided.html)
 2. Look for the details by running `cf cups --help`.
 
 3. You will need to specify the parameter citiesuri to the user defined service instance .
@@ -51,7 +51,7 @@ In this section we will create a backend microservice end point for cities-servi
 
   $ cf create-user-provided-service <YOUR INITIALS>-cities-ws -p "citiesuri"
 
-  citiesuri>   http://<YOUR INIITALS>-cities-service.example.com/
+  citiesuri>   http://<YOUR INIITALS>-cities-service.app.cloud.rick-ross.com/
 
   Creating user provided service....
   ````
@@ -101,7 +101,7 @@ System-Provided:
    {
     "credentials": {
      "tag": "cities",
-     "uri": "https://rj-cities-service.example.com/"
+     "uri": "https://rj-cities-service.app.cloud.rick-ross.com/"
     },
     "label": "user-provided",
     "name": "cities-ws",
@@ -116,7 +116,7 @@ System-Provided:
  "VCAP_APPLICATION": {
   "application_name": "rj-cities-ui",
   "application_uris": [
-   "rj-cities-ui.example.com"
+   "rj-cities-ui.app.cloud.rick-ross.com"
   ],
   "application_version": "dceb111b-3a68-45ad-83fd-3b8b836ebbe7",
   "limits": {
@@ -128,7 +128,7 @@ System-Provided:
   "space_id": "56e1d8ef-e87f-4b1c-930b-e7f46c00e483",
   "space_name": "development",
   "uris": [
-   "rj-cities-ui.example.com"
+   "rj-cities-ui.app.cloud.rick-ross.com"
   ],
   "users": null,
   "version": "dceb111b-3a68-45ad-83fd-3b8b836ebbe7"
@@ -151,5 +151,4 @@ Open the App Manager (Console) and navigate to your apps. You will see the citie
 
 In this part of the workshop we created a cities-ui app which is loosely bound and independently developed from the backend service. We bound that app to the cities-service microservice.
 
-How do you design your applications today? Are they loosely coupled? Do they follow 12 Factor Application design principles? 
-
+How do you design your applications today? Are they loosely coupled? Do they follow 12 Factor Application design principles?

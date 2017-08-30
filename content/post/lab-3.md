@@ -81,12 +81,12 @@ The students have userId's (student1-student40) and the passwords will be distri
 Each student is assigned their own Organization (student1-org)
 
 ````
-cf login -a https://api.run.haas-112.pez.pivotal.io --skip-ssl-validation
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
   Email: <studentXX>
   Password: ••••••••
 ````
 
-Login to the App Console at https://apps.run.haas-112.pez.pivotal.io
+Login to the App Console at https://apps.sys.cloud.rick-ross.com
 
 <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 100%;"/>
 
@@ -287,7 +287,7 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
       greeting:
         displayFortune: true # <----Change to true
 
-      quoteServiceURL: http://quote-service-dev.cfapps.haas-112.pez.pivotal.io/quote
+      quoteServiceURL: http://quote-service-dev.app.cloud.rick-ross.com/quote
       ````
 
 
@@ -308,7 +308,7 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
             - <student-XX>-config-server
           env:
             SPRING_PROFILES_ACTIVE: dev
-            TRUST_CERTS: api.run.haas-112.pez.pivotal.io
+            TRUST_CERTS: api.sys.cloud.rick-ross.com
 
 
 2. Build the app using gradle
@@ -326,8 +326,8 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
 4. Open in the browser the App
 
       ````
-      http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/
-      http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/random-quote
+      http://<student-XX>-greeting-config.app.cloud.rick-ross.com/
+      http://<student-XX>-greeting-config.app.cloud.rick-ross.com/random-quote
       ````
 
 ### Step 7
@@ -339,13 +339,13 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
       greeting:
         displayFortune: false # <----Change to true
 
-      quoteServiceURL: http://quote-service-qa.cfapps.haas-112.pez.pivotal.io/quote
+      quoteServiceURL: http://quote-service-qa.app.cloud.rick-ross.com/quote
       ````
 
 2. Force refresh the beans
 
       ````
-      curl -X POST http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/refresh
+      curl -X POST http://<student-XX>-greeting-config.app.cloud.rick-ross.com/refresh
       ````
 
       This will output the properties which changed
@@ -357,8 +357,8 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
 
       You will see the Greetings doesn't have any fortune and the random-quote is from qa service
 
-        http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/
-        http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/random-quote
+        http://<student-XX>-greeting-config.app.cloud.rick-ross.com/
+        http://<student-XX>-greeting-config.app.cloud.rick-ross.com/random-quote
 
 
 ### Step 8
@@ -390,8 +390,8 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
 
       You can verify by opening the two URLs
 
-        http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/
-        http://<student-XX>-greeting-config.cfapps.haas-112.pez.pivotal.io/random-quote
+        http://<student-XX>-greeting-config.app.cloud.rick-ross.com/
+        http://<student-XX>-greeting-config.app.cloud.rick-ross.com/random-quote
 
 
 ### Step 9
@@ -430,44 +430,44 @@ Spring Cloud Bus addresses the issues listed above by providing a single endpoin
 4. Change the app-config/greeting-config.yml and refresh all the app instances using Cloud Bus
 
       ````
-      curl -X POST http://<studentXXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/bus/refresh
+      curl -X POST http://<studentXXX>-greeting-config.app.cloud.rick-ross.com/bus/refresh
       ````
 
 5. Verify by opening the two URLs
 
-        http://<studentXXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/
-        http://<studentXXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/random-quote
+        http://<studentXXX>-greeting-config.app.cloud.rick-ross.com/
+        http://<studentXXX>-greeting-config.app.cloud.rick-ross.com/random-quote
 
 ### Step 10
 ##### Spring Actuator Endpoints
 
 Check the Actuator Endpoints
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/beans``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/beans``
 
 Dumps all of the beans in the Spring context.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/autoconfig``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/autoconfig``
 
 Dumps all of the auto-configuration performed as part of application bootstrapping.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/configprops``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/configprops``
 
 Displays a collated list of all @ConfigurationProperties.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/env``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/env``
 
 Dumps the application’s shell environment as well as all Java system properties.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/mappings``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/mappings``
 
 Dumps all URI request mappings and the controller methods to which they are mapped.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/dump``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/dump``
 
 Performs a thread dump.
 
-``http://<studentXX>-greeting-config.cfapps.haas-112.pez.pivotal.io/trace``
+``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/trace``
 
 # Advanced Topics
 
@@ -476,7 +476,7 @@ The Config Server can serve encrypted property values from a configuration file.
 
       {"git": {"uri": "https://github.com/spring-cloud-services-samples/cook-config.git" }, "encrypt": { "key": "KEY" }}
 
-And to get the encrypted values, first get the Oauth TOKEN_STRING
+And to get the encrypted values, first get the OAuth TOKEN_STRING
 
         $ cf env cook
         Getting env variables for app cook in org myorg / space development as admin...
@@ -488,7 +488,7 @@ And to get the encrypted values, first get the Oauth TOKEN_STRING
           "p-config-server": [
            {
             "credentials": {
-             "access_token_uri": "https://p-spring-cloud-services.uaa.cf.wise.com/oauth/token",
+             "access_token_uri": "https://p-spring-cloud-services.uaa.sys.cloud.rick-ross.com/oauth/token",
              "client_id": "p-config-server-876cd13b-1564-4a9a-9d44-c7c8a6257b73",
              "client_secret": "rU7dMUw6bQjR",
              "uri": "https://config-86b38ce0-eed8-4c01-adb4-1a651a6178e2.apps.wise.com"

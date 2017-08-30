@@ -22,7 +22,7 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 * Marketplace Observations
 * Cloud Native Architecture
 * Introduction to Pivotal Cloud Foundry
-* PCF at Audatex 
+* PCF at Audatex
 * Lab: Deploying applications
 * Services
 * Lab: Bind to a Service
@@ -32,7 +32,7 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 * Domains and Routing
 * Lab: Blue Green Deployments
 * Buildpacks
-* Spring Cloud Services 
+* Spring Cloud Services
 * Lab: Spring Cloud Services
 * Concourse
 
@@ -64,14 +64,14 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 
 1. Install the Prerequisites software (cf cli)
 
-2. Check if you are able to use the cf cli to connect your PCF  Environment. 
+2. Check if you are able to use the cf cli to connect your PCF  Environment.
 
-          cf login -a https://api.example.com  --skip-ssl-validation
+          cf login -a https://api.sys.cloud.rick-ross.com  --skip-ssl-validation
 
 3. Check if you are able to connect to Git repo and download / clone the repo using CLI
 4. Login to the App Manager Console at
 
-        https://apps.example.com
+        https://app.cloud.rick-ross.com
 
 
 

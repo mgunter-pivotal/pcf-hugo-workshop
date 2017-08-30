@@ -10,14 +10,14 @@ weight = 6
 
 ### Goal
 
-To take a previously deployed microservice and demonstrate how to bind it to backing services. 
+To take a previously deployed microservice and demonstrate how to bind it to backing services.
 
 <!--more-->
 
 Prerequisites
 --
 
-You have successfully completed the previous lab. 
+You have successfully completed the previous lab.
 
 In this lab we are going to do a green-blue deployment using cf commands. We'll also learn about alternative ways of doing the same thing through a plugin and scripting commands.
 
@@ -26,7 +26,7 @@ In this lab we are going to do a green-blue deployment using cf commands. We'll 
 ### Step 1
 ##### Process of Blue Green Deployment
 
-  Review the CF Document for blue green deployment link:https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html[Using Blue-Green Deployment to Reduce Downtime and Risk]
+  Review the CF Document for blue green deployment [Using Blue-Green Deployment to Reduce Downtime and Risk](https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/blue-green.html)
 
   In summary Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green.
 
@@ -44,7 +44,7 @@ First push a new version of the app with a blue route.
     // Push the app version v1 with the hostname as blue
     $ cf push <YOUR INITIALS>-cities-hello-v1 --hostname <YOUR INITIALS>-cities-hello-blue -f manifest.hello
     // Map your outside route to this blue version
-    $ cf map-route <YOUR INITIALS>-cities-hello-v1 example.com --hostname <YOUR INITIALS>-cities-hello
+    $ cf map-route <YOUR INITIALS>-cities-hello-v1 app.cloud.rick-ross.com --hostname <YOUR INITIALS>-cities-hello
     $ cf apps // Check the apps and the routes
 
 Next, you can push a new version of the app with a green route.
@@ -52,9 +52,9 @@ Next, you can push a new version of the app with a green route.
     // Push the app version v2 with the hostname as green
     $ cf push <YOUR INITIALS>-cities-hello-v2 --hostname <YOUR INITIALS>-cities-hello-green -f manifest.yml
     // Map the outside route to this green version. Now your outside route is mapped to both blue and green
-    $ cf map-route <YOUR INITIALS>-cities-hello-v2 example.com --hostname <YOUR INITIALS>-cities-hello
+    $ cf map-route <YOUR INITIALS>-cities-hello-v2 app.cloud.rick-ross.com --hostname <YOUR INITIALS>-cities-hello
     // Unmap the outside route to the blue version. All the traffic is now directed to v2
-    $ cf unmap-route <YOUR INITIALS>-cities-hello-v1 example.com --hostname <YOUR INITIALS>-cities-hello
+    $ cf unmap-route <YOUR INITIALS>-cities-hello-v1 app.cloud.rick-ross.com --hostname <YOUR INITIALS>-cities-hello
 
 
 ##### Option 2

@@ -10,7 +10,7 @@ weight = 4
 
 ### Goal
 
-To take a previously deployed microservice and demonstrate how to scale the applicaiton in the Application Manager and through the command line. 
+To take a previously deployed microservice and demonstrate how to scale the applicaiton in the Application Manager and through the command line.
 
 <!--more-->
 
@@ -61,15 +61,15 @@ You can also use the Autoscaler service from the marketplace and bind it to your
 To verify that the application is running, use the following curl commands (or use your browser) to retrieve data from the service or use a browser to access the URL:
 
   ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.example.com/cities
+  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.example.com/cities/49
+  $ curl -i -k https://<studentXX>-cities-service.app.cloud.rick-ross.com/cities/49
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.example.com/cities?size=5
+  $ curl -i -k https://<studentXX>-cities-service.app.cloud.rick-ross.com/cities?size=5
   ````
 
   For Windows, use your browser and visit the corresponding URLs.
@@ -78,6 +78,4 @@ To verify that the application is running, use the following curl commands (or u
 
 ##### Discussion
 
-In this part of the lab we app and scaled the app. How do you horizontally scale your applications today? 
-
-
+In this part of the lab we app and scaled the app. How do you horizontally scale your applications today?
