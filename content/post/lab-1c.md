@@ -75,3 +75,9 @@ To verify that the application is running, use the following curl commands (or u
   For Windows, use your browser and visit the corresponding URLs.
 
 <br>
+
+##### Discussion
+
+In this part of the lab we app and scaled the app. How do you horizontally scale your applications today? 
+
+
