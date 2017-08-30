@@ -3,7 +3,7 @@
 Categories = ["lab"]
 Tags = ["cf","microservices","cloudfoundry"]
 date = "2017-08-29T07:49:11-04:00"
-title = "Lab : Build and Deploy Apps on PCF"
+title = "Lab: Build and Deploy Apps on PCF"
 weight = 2
 
 +++
@@ -96,8 +96,6 @@ In this workshop we are going to follow these steps to deploy apps on Cloud foun
     - Get a Spring boot app from an existing Git Repository.
     - Deploy it to Pivotal Cloud foundry.
     - Manage the lifecycle of the application.
-
-<img src="/images/blue-green.png" alt="DevOps on CF" style="width: 100%;"/>
 
 __NOTE__
 

@@ -2,7 +2,7 @@
 Categories = ["lab"]
 Tags = ["spring","circuit-breaker","cloudfoundry"]
 date = "2016-04-15T11:28:20-04:00"
-title = "Lab 5: Spring Cloud Circuit Breaker"
+title = "Lab: Spring Cloud Circuit Breaker"
 weight = 4
 +++
 
