@@ -1,7 +1,7 @@
 +++
 Categories = ["lab"]
-Tags = ["concourse"]
-date = "2016-03-15T14:54:22-04:00"
+Tags = ["concourse", "pipeline"]
+date = "2017-08-29T12:08:22-04:00"
 title = "Lab: Build Pipelines using Concourse.ci"
 weight = 10
 +++

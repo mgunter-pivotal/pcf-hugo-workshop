@@ -1,7 +1,7 @@
 +++
 
 Categories = ["lab"]
-Tags = ["cf","microservices","cloudfoundry"]
+Tags = ["building","microservices","cloudfoundry"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab Build and Deploy Apps on PCF"
 weight = 1
