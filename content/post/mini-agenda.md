@@ -1,7 +1,7 @@
 +++
 Categories = ["mini-agenda","workshop"]
 Tags = ["logistics","speakers"]
-date = "2016-03-15T16:23:23+09:00"
+date = "2017-09-06T05:00:00+04:00"
 type = "Mini-Agenda"
 weight = 1
 +++
