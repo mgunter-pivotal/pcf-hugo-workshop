@@ -115,16 +115,16 @@ Change into the correct folder. Notice that we are going down two levels to the 
 
 Linux/Mac:
 
-    ```
-    cd pcf-dotnet-environment-viewer/ViewEnvironment
-    ```
+  ```bash
+  cd pcf-dotnet-environment-viewer/ViewEnvironment
+  ```
 
 Windows:
 
-    ```
-    cd pcf-dotnet-environment-viewer\ViewEnvironment
-    ```
-
+  ```
+  cd pcf-dotnet-environment-viewer\ViewEnvironment
+  ```
+  
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
@@ -153,22 +153,24 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Push the PCF DotNet Environment Viewer
 
-    ```bash
-    $ cf push 
-    // This will give an output which is similar to this
-    requested state: started
-    instances: 1/1
-    usage: 512M x 1 instances
-    urls: env-noninductive-nursling.app.cloud.rick-ross.com
-    last uploaded: Thu Aug 31 19:41:33 UTC 2017
-    stack: windows2012R2
-    buildpack: hwc_buildpack
-    ```
+  ```bash
+  $ cf push  
+  // This will give an output which is similar to this
+  requested state: started
+  instances: 1/1
+  usage: 512M x 1 instances
+  urls: env-noninductive-nursling.app.cloud.rick-ross.com
+  last uploaded: Thu Aug 31 19:41:33 UTC 2017
+  stack: windows2012R2
+  buildpack: hwc_buildpack
+  ```
 
 ### Step 5
 ##### Open the Application in a Browser
-    When you push the apps, PCF will provide an URL to access the application
-    <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
+
+When you push the apps, PCF will provide an URL to access the application
+    
+  <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
 
 ## Deploying .NET Core Applications
 
@@ -176,25 +178,27 @@ Push the PCF DotNet Environment Viewer
 ##### Build the Dot Net Core Demo Application
 By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
 
-    ```bash
-    $ cd ../../dotnetcoreCFdemo
-    $ dotnet restore
-    $ dotnet build
-    $ cf push dotnetdemo --random-route 
-    // This will give an output which is similar to this
-    requested state: started
-    instances: 1/1
-    usage: 1G x 1 instances
-    urls: dotnetdemo-surreptitious-supercapability.app.cloud.rick-ross.com
-    last uploaded: Thu Aug 31 20:17:49 UTC 2017
-    stack: cflinuxfs2
-    buildpack: ASP.NET Core (buildpack-1.0.19)
-    ```
+  ```bash
+  $ cd ../../dotnetcoreCFdemo
+  $ dotnet restore
+  $ dotnet build
+  $ cf push dotnetdemo --random-route 
+  // This will give an output which is similar to this
+  requested state: started
+  instances: 1/1
+  usage: 1G x 1 instances
+  urls: dotnetdemo-surreptitious-supercapability.app.cloud.rick-ross.com
+  last uploaded: Thu Aug 31 20:17:49 UTC 2017
+  stack: cflinuxfs2
+  buildpack: ASP.NET Core (buildpack-1.0.19)
+  ```
 
 ### Step 2
 ##### Open the Application in a Browser
-    When you push applications, it will provide you the URL to access it.
-    <img src="/images/dot-net-core-app.png" alt="Dot Net Core Demo" style="width: 70%;"/>
+
+When you push applications, it will provide you the URL to access it.
+
+  <img src="/images/dot-net-core-app.png" alt="Dot Net Core Demo" style="width: 70%;"/>
     
 ##### Recap: 
 
