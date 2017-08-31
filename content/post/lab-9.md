@@ -16,10 +16,13 @@ To deploy a Microsoft Framework .NET Application and a .NET Core Application to 
 
 Prerequisites
 --
+1. Install .NET Core 1.x
 
-1. Clone or Download the Dot Net Attendee Source Code
+    [.NET Core](https://www.microsoft.com/net/core)
 
-	[Dot Net Attendees:  https://github.com/jennymclaughlin/DotNetAttendees](https://github.com/jennymclaughlin/DotNetAttendees)
+2. Clone or Download the Dot Net Attendee Source Code
+
+	[Dot Net Environment Viewer:  https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer)
 
 	##### Get the source code repository app
 
@@ -28,25 +31,25 @@ Prerequisites
 	Download the source code. Download as Zip file and save it in local folder
 
 	```bash
-	   unzip DotNetAttendees-master.zip
+	   unzip pcf-dotnet-environment-viewer-master.zip
 	```
 	##### ---OR---
 
 	Fork and Clone
 
-	[Dot Net Attendees:  https://github.com/jennymclaughlin/DotNetAttendees](https://github.com/jennymclaughlin/DotNetAttendees)
+	[Dot Net Environment Viewer:  https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer)
 
 	For Linux/Mac:
 	```bash
-	$git clone https://github.com/jennymclaughlin/DotNetAttendees.git
+	$git clone https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git
 	```
 
 	For Windows
 	```
-	C:\<Some Directory to save code>\> git clone https://github.com/jennymclaughlin/DotNetAttendees.git
+	C:\<Some Directory to save code>\> git clone https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git
 	```
 	
-2. Clone or Download the Dot Net Core Demo Source Code
+3. Clone or Download the Dot Net Core Demo Source Code
 
 	[Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo)
 
@@ -101,6 +104,48 @@ In this workshop we are going to follow these steps to deploy .NET Framework and
 
 ***
 ### Step 1
-##### Build the app
-By this point, you should have cloned (or forked, or downloaded) the [DotNetAttendees Repo](https://github.com/jennymclaughlin/DotNetAttendees) and the [Dot Net Core Repo](https://github.com/jennymclaughlin/dotnetcoreCFdemo).  Now you will build the project and deploy it to Cloud Foundry.
+##### Build the Dot Net Environment Viewer Application
+By this point, you should have cloned (or forked, or downloaded) the [DotNetAttendees Repo](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git).  Now prepare the application to deploy to Cloud Foundry. 
+
+For this example, we do not need to "build" the application. For other .NET Framework applicaitons, you would publish the project to a specified folder and do the "cf push" from that folder. 
+
+Change into the correct folder. Notice that we are going down two levels to the ViewEnvironment Folder:
+
+Linux/Mac:
+
+    cd pcf-dotnet-environment-viewer/ViewEnvironment
+
+
+Windows:
+
+    cd pcf-dotnet-environment-viewer\ViewEnvironment
+
+
+### Step 2
+##### Login into Pivotal Cloud Foundry (if necessary)
+
+Each participant will have their own user ids and passwords.  
+
+````
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+  Email: myuserid
+  Password: ••••••••
+
+  Select a space (or press enter to skip):
+  1. development
+  2. test
+  3. production
+
+  Select any one and stick to that space for the rest of the workshop.
+
+````
+
+Login to the App Console at https://app.cloud.rick-ross.com
+
+<img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
+
+
+### Step 4
+##### Push the app
+
 

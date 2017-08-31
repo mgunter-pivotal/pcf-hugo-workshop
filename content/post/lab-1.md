@@ -148,23 +148,23 @@ Login to the App Console at https://app.cloud.rick-ross.com
 ##### Push the app
 
 
-1. Push the cities-hello, put your initials in the app name so we don't get conflicts
+1. Push the PCF DotNet Environment Viewer
 
     ```bash
-    $ cd cities-hello
-    $ cf push <yourinitials>-cities-hello
+    $ cf push 
     // This will give an output which is similar to this
     requested state: started
     instances: 1/1
     usage: 512M x 1 instances
-    urls: cities-hello-lactiferous-unanswerableness.sys.cloud.rick-ross.com
-    last uploaded: Mon Jun 15 14:53:10 UTC 2015
-    stack: cflinuxfs2
+    urls: env-noninductive-nursling.app.cloud.rick-ross.com
+    last uploaded: Thu Aug 31 19:41:33 UTC 2017
+    stack: windows2012R2
+    buildpack: hwc_buildpack
     ```
 2. Open the app url
 
     When you push the apps, it will give the url route to the app.
-    <img src="/images/welcome.png" alt="Welcome to PCF Workshop" style="width: 70%;"/>
+    <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
 
 3. If you haven't already it is a good time to walk through the AppsManager:
 
