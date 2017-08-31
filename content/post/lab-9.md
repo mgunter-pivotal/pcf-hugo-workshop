@@ -165,13 +165,9 @@ Push the PCF DotNet Environment Viewer
     ```
 
 ### Step 5
-
-Open the app url in a Browser
-
-    When you push the apps, it will give the url route to the app.
+##### Open the Application in a Browser
+    When you push the apps, PCF will provide an URL to access the application
     <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
-
-
 
 ## Deploying .NET Core Applications
 
@@ -196,8 +192,6 @@ By this point, you should have cloned (or forked, or downloaded) the [Dot Net Co
 
 ### Step 2
 ##### Open the Application in a Browser
-
-
     When you push applications, it will provide you the URL to access it.
     <img src="/images/dot-net-core-app.png" alt="Dot Net Core Demo" style="width: 70%;"/>
     
