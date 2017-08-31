@@ -170,16 +170,16 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
         https://app.cloud.rick-ross.com
 
-##### Recap: Part 1
+##### Recap: 
 
 > Cloud Foundry Haiku </br>
   Here is my source code </br>
   Run it on the cloud for me </br>
   I do not care how</br>
 
-##### Discussion: Part 1
+##### Discussion
 
-* How do you push an app to the cloud today?
-* How does the cloud platform understand which runtime to use to run the app?
+* How do you deploy an application today?
+* How does your platform understand which runtime to use to run the app?
 
 ***

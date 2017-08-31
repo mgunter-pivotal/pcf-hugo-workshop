@@ -103,6 +103,8 @@ Steps
 In this workshop we are going to follow these steps to deploy .NET Framework and .NET Core applications on Cloud foundry.
 
 ***
+## Deploying .NET Framework Applications
+
 ### Step 1
 ##### Build the Dot Net Environment Viewer Application
 By this point, you should have cloned (or forked, or downloaded) the [DotNetAttendees Repo](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git).  Now prepare the application to deploy to Cloud Foundry. 
@@ -148,7 +150,7 @@ Login to the App Console at https://app.cloud.rick-ross.com
 ### Step 4
 ##### Push the app
 
-1. Push the PCF DotNet Environment Viewer
+Push the PCF DotNet Environment Viewer
 
     ```bash
     $ cf push 
@@ -161,9 +163,56 @@ Login to the App Console at https://app.cloud.rick-ross.com
     stack: windows2012R2
     buildpack: hwc_buildpack
     ```
-2. Open the app url
+
+### Step 5
+
+Open the app url in a Browser
 
     When you push the apps, it will give the url route to the app.
     <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
 
+
+
+## Deploying .NET Core Applications
+
+### Step 1
+##### Build the Dot Net Core Demo Application
+By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
+
+    ```bash
+    $ cd ../../dotnetcoreCFdemo
+    $ dotnet restore
+    $ dotnet build
+    $ cf push dotnetdemo --random-route 
+    // This will give an output which is similar to this
+    requested state: started
+    instances: 1/1
+    usage: 1G x 1 instances
+    urls: dotnetdemo-surreptitious-supercapability.app.cloud.rick-ross.com
+    last uploaded: Thu Aug 31 20:17:49 UTC 2017
+    stack: cflinuxfs2
+    buildpack: ASP.NET Core (buildpack-1.0.19)
+    ```
+
+### Step 2
+##### Open the Application in a Browser
+
+
+    When you push applications, it will provide you the URL to access it.
+    <img src="/images/dot-net-core-app.png" alt="Dot Net Core Demo" style="width: 70%;"/>
+    
+##### Recap: 
+
+> Cloud Foundry Haiku </br>
+  Here is my source code </br>
+  Run it on the cloud for me </br>
+  I do not care how</br>
+
+##### Discussion
+
+* How do you deploy an application today?
+* How does your platform understand which runtime to use to run the app?
+* How do or would you deploy a .NET Framework Application today?
+* How do or would you deploy a .NET Core Application today?
+***
 
