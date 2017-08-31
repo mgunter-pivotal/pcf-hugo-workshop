@@ -23,7 +23,7 @@ Prerequisites
 
 	##### Get the source code repository app
 
-	<img src="/images/dot-net-framework-git.png" alt="Git style="width: 70%;"/>
+	<img src="/images/dot-net-framework-git.png" alt="Git style="width: 40%;"/>
 
 	Download the source code. Download as Zip file and save it in local folder
 
@@ -52,7 +52,7 @@ Prerequisites
 
 	##### Get the source code repository app
 
-	<img src="/images/dot-net-core-git.png" alt="Git style="width: 70%;"/>
+	<img src="/images/dot-net-core-git.png" alt="Git style="width: 40%;"/>
 
 	Download the source code. Download as Zip file and save it in local folder
 
