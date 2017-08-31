@@ -115,21 +115,23 @@ Change into the correct folder. Notice that we are going down two levels to the 
 
 Linux/Mac:
 
+    ````
     cd pcf-dotnet-environment-viewer/ViewEnvironment
-
+    ````
 
 Windows:
 
+    ````
     cd pcf-dotnet-environment-viewer\ViewEnvironment
-
+    ````
 
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
 Each participant will have their own user ids and passwords.  
 
-````
-cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+````bash
+  $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
   Email: myuserid
   Password: ••••••••
 
@@ -152,7 +154,7 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Push the PCF DotNet Environment Viewer
 
-    ```bash
+    ````bash
     $ cf push 
     // This will give an output which is similar to this
     requested state: started
@@ -162,7 +164,7 @@ Push the PCF DotNet Environment Viewer
     last uploaded: Thu Aug 31 19:41:33 UTC 2017
     stack: windows2012R2
     buildpack: hwc_buildpack
-    ```
+    ````
 
 ### Step 5
 ##### Open the Application in a Browser
@@ -175,7 +177,7 @@ Push the PCF DotNet Environment Viewer
 ##### Build the Dot Net Core Demo Application
 By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
 
-    ```bash
+    ````bash
     $ cd ../../dotnetcoreCFdemo
     $ dotnet restore
     $ dotnet build
@@ -188,7 +190,7 @@ By this point, you should have cloned (or forked, or downloaded) the [Dot Net Co
     last uploaded: Thu Aug 31 20:17:49 UTC 2017
     stack: cflinuxfs2
     buildpack: ASP.NET Core (buildpack-1.0.19)
-    ```
+    ````
 
 ### Step 2
 ##### Open the Application in a Browser
