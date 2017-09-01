@@ -3,8 +3,8 @@
 Categories = ["lab"]
 Tags = ["dotnet","microservices","cloudfoundry"]
 date = "2017-08-29T07:49:11-04:00"
-title = "Lab: Deploying .NET Applications"
-weight = 2
+title = "Lab: Deploying .NET Applications on PCF"
+weight = 1
 
 +++
 
@@ -154,7 +154,7 @@ Login to the App Console at https://app.cloud.rick-ross.com
 Push the PCF DotNet Environment Viewer
 
   ```bash
-  $ cf push  
+  $ cf push <YOUR-INITIALS>-env 
   // This will give an output which is similar to this
   requested state: started
   instances: 1/1
@@ -182,7 +182,7 @@ By this point, you should have cloned (or forked, or downloaded) the [Dot Net Co
   $ cd ../../dotnetcoreCFdemo
   $ dotnet restore
   $ dotnet build
-  $ cf push dotnetdemo --random-route 
+  $ cf push <YOUR-INITIALS>-dotnetdemo --random-route 
   // This will give an output which is similar to this
   requested state: started
   instances: 1/1
