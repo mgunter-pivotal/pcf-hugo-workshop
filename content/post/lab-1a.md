@@ -4,7 +4,7 @@ Categories = ["lab"]
 Tags = ["services","microservices","cloudfoundry"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab: Binding to Services"
-weight = 2
+weight = 3
 
 +++
 
@@ -22,7 +22,7 @@ You have successfully completed the previous lab.
 Steps
 --
 
-In ths Lab you will deploy a new application that requires a MySQL database. You will create an instance of a database, bind it to your applicaiton via the command line, and then see how to accomplish the same thing by using the applicaiton manifest file.
+In ths Lab you will deploy a new application that requires a MySQL database. You will create an instance of a database, bind it to your applicaiton via the command line, and then see how to accomplish the same thing by using the application manifest file.
 
 ### Step 1
 ##### Create a Database from Marketplace
