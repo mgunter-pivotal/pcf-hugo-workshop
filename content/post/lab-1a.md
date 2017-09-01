@@ -229,3 +229,10 @@ You will get the output similar to this on your terminal
 
   No staging env variables have been set
   ````
+
+##### Discussion 
+
+* How do you provision services today? 
+* How long does it take to get access to those services?
+* What mechanisms do you use today to provide the connection information to the service?
+***
