@@ -32,7 +32,7 @@ In ths Lab you will bind your previous .NET applications to a MySQL database. Yo
 
     [Managing Services](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html)
 
-2. Create a mysql service, name it as `<YOUR INITIALS>-cities-db`
+2. Create a mysql service, name it as `<YOUR INITIALS>-env-db`
 
     You can create the service from the `cli` or launch the App Manager-> Select the Development Space [https://apps.sys.cloud.rick-ross.com](https://apps.sys.cloud.rick-ross.com) and login.
     Navigate to the marketplace and see the available services.
@@ -81,7 +81,7 @@ In ths Lab you will bind your previous .NET applications to a MySQL database. Yo
 ### Step 4
 ##### Binding Services via the Manifest
 
-Next, lets edit the Dot Net Environment Viewer application with a manifest to help automate deployment.
+Next, edit the Dot Net Environment Viewer application with a manifest to help automate deployment.
 
 1. Review the documentation: http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/manifest.html
 2. Edit the application manifest  `manifest.yml` in your `ViewEnvironment` folder
@@ -96,7 +96,7 @@ Next, lets edit the Dot Net Environment Viewer application with a manifest to he
     wordpad.exe manifest.yml
     ````
 
-3. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for cities-service.
+3. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for cities-service. This step will require you to look at the documentation link above. 
 
 4. Test your manifest by re-pushing your app with no parameters:
 
@@ -106,14 +106,16 @@ Next, lets edit the Dot Net Environment Viewer application with a manifest to he
 
     Notice that using a manifest, you have moved the need for multiple commands into one location. In addition, using manifests gives you consistency between your deployment environments (Dev, QA, UAT, Performance, Production, etc) so you have a repeatable and documented way of deploying software.
     
-__NOTE__
-
-> The default manifest file for an app is `manifest.yml` and it if is present, it is automatically picked without specifying the manifest file option (e.g. -f my-manifest-file.yml).
+    __NOTE__
+    
+    > The default manifest file for an app is `manifest.yml` and it if is present, it is automatically picked without specifying the manifest file option (e.g. -f my-manifest-file.yml).
 
 7. Once you are comfortable of what we just did, let's clean up the resources. 
+
 
    ```bash
    $ cf delete -r <YOUR INITIALS>-env
    $ cf delete-service <YOUR INITIALS>-env-db
+   ```
    
 
