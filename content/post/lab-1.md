@@ -152,7 +152,7 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
     ```bash
     $ cd cities-hello
-    $ cf push <yourinitials>-cities-hello
+    $ cf push <YOUR INITIALS>-cities-hello
     // This will give an output which is similar to this
     requested state: started
     instances: 1/1
@@ -169,6 +169,12 @@ Login to the App Console at https://app.cloud.rick-ross.com
 3. If you haven't already it is a good time to walk through the AppsManager:
 
         https://app.cloud.rick-ross.com
+
+4. When you are finished, let's delete the application we just created. In the next labs we will be pushing a diferent application
+
+    ```bash
+    cf delete -r <YOUR INITIALS>-cities-hello
+    ```
 
 ##### Recap: 
 

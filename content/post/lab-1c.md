@@ -65,11 +65,11 @@ To verify that the application is running, use the following curl commands (or u
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.app.cloud.rick-ross.com/cities/49
+  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities/49
   ````
 
   ````bash
-  $ curl -i -k https://<studentXX>-cities-service.app.cloud.rick-ross.com/cities?size=5
+  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities?size=5
   ````
 
   For Windows, use your browser and visit the corresponding URLs.

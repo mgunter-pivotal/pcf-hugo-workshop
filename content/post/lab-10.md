@@ -74,7 +74,7 @@ In ths Lab you will bind your previous .NET applications to a MySQL database. Yo
 
 5. Open the URL of the application in a browser window. Notice that there is now an attendees section available to add new attendees. Also notice the bound services now include the information required to connect to MySQL. Take a few minutes to add a few attendees.
 
-  <img src="/images/env-with-db.png" alt="Bound Environment Viewer" style="width: 70%;"/>
+    <img src="/images/env-with-db.png" alt="Bound Environment Viewer" style="width: 70%;"/>
 
 6. Check the MySQL database through the `Manage` link in the App Manager to see that it now contains data.
 

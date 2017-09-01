@@ -37,7 +37,7 @@ Prerequisites
 
 5. Gradle for build (https://projects.eclipse.org/projects/tools.buildship)
 
-6. Pivotal Web Services Account.  Create a free trial account here [Pivotal Web Services](http://run.pivotal.io/)
+6. Access to a Pivotal Cloud Foundry instance
 
 
 Steps
@@ -77,18 +77,18 @@ git clone https://github.com/rjain-pivotal/pcf-workshop-spring-labs.git
 ### Step 2
 ##### Login into Pivotal Cloud Foundry
 
-The students have userId's (student1-student40) and the passwords will be distributed in the workshop.
-Each student is assigned their own Organization (student1-org)
+The participants have userId's and the passwords will be distributed prior to the workshop.
 
-````
-cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-  Email: <studentXX>
-  Password: ••••••••
-````
+
+    ````
+    cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+    Email: UserID
+    Password: ••••••••
+    ````
 
 Login to the App Console at https://apps.sys.cloud.rick-ross.com
 
-<img src="/images/pcf-console.png" alt="PCF App Console" style="width: 100%;"/>
+    <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 100%;"/>
 
 
 ### Step 3
@@ -151,11 +151,11 @@ https://github.com/myorg/configurations
 <img src="/images/pcf-console-1.png" alt="Marketplace Services" style="width: 100%;"/>
 
 2. Select the default plan.
-3. Name the service instance as 'studentXX-config-service'
+3. Name the service instance as '<YOUR INITIALS>-config-service'
 
 <img src="/images/pcf-config-service-1.png" alt="Config Server" style="width: 100%;"/>
 
-4. This will create the studentXX-config-service service instance. .
+4. This will create the <YOUR INITIALS>-config-service service instance. .
 
 <img src="/images/pcf-config-service-2.png" alt="Config Server" style="width: 100%;"/>
 
@@ -443,31 +443,31 @@ Spring Cloud Bus addresses the issues listed above by providing a single endpoin
 
 Check the Actuator Endpoints
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/beans``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/beans``
 
 Dumps all of the beans in the Spring context.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/autoconfig``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/autoconfig``
 
 Dumps all of the auto-configuration performed as part of application bootstrapping.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/configprops``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/configprops``
 
 Displays a collated list of all @ConfigurationProperties.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/env``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/env``
 
 Dumps the application’s shell environment as well as all Java system properties.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/mappings``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/mappings``
 
 Dumps all URI request mappings and the controller methods to which they are mapped.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/dump``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/dump``
 
 Performs a thread dump.
 
-``http://<studentXX>-greeting-config.app.cloud.rick-ross.com/trace``
+``http://<YOUR INITIALS>-greeting-config.app.cloud.rick-ross.com/trace``
 
 # Advanced Topics
 
