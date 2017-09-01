@@ -120,11 +120,17 @@ Next, edit the Dot Net Environment Viewer application with a manifest to help au
 
 ## Dot Net Core 
 
-In the interest of time, we will not be walking through the steps to bind a service to a .NET Core application because they are the same. 
+In the interest of time, we will not be walking through the steps to bind a service to a .NET Core application because they are fundamentally the same thing we have already done. When you are starting with a brand new project the steps would look like this: 
 
-### Step 1 - Create the Service
-### Step 3 - Bind the Application to the Service
-### Step 3 - Restart the Application
+#### Step 1 - Create the Service
+#### Step 2 - Push the Application
+#### Step 3 - Bind the Application to the Service
+
+If you already have an application deployed on Cloud Foundry and now want to bind a service to it, the steps look like this:
+
+#### Step 1 - Create the Service
+#### Step 2 - Bind the Application to the Service
+#### Step 3 - Restart the Application
 
 ##### Discussion 
 
