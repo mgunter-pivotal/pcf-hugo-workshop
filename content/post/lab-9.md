@@ -16,7 +16,7 @@ To deploy a Microsoft Framework .NET Application and a .NET Core Application to 
 
 Prerequisites
 --
-1. Install .NET Core 1.x
+1. Install .NET Core 2.0
 
     [.NET Core](https://www.microsoft.com/net/core)
 
@@ -49,9 +49,9 @@ Prerequisites
 	C:\<Some Directory to save code>\> git clone https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git
 	```
 	
-3. Clone or Download the Dot Net Core Demo Source Code
+3. Clone or Download the ASP.NET Core 2 Sample
 
-	[Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo)
+	[ASP.NET Core Repo:  https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample](https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample)
 
 	##### Get the source code repository app
 
@@ -60,22 +60,22 @@ Prerequisites
 	Download the source code. Download as Zip file and save it in local folder
 
 	```bash
-	   unzip dotnetcoreCFdemo-master.zip
+	   unzip asp-dot-net-core-2-sample-master.zip
 	```
 	##### ---OR---
 
 	Fork and Clone
 
-	[Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo)
+	[Dot Net Core Repo:  https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample](https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample)
 
 	For Linux/Mac:
 	```bash
-	$git clone https://github.com/jennymclaughlin/dotnetcoreCFdemo.git
+	$git clone https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample.git
 	```
 
 	For Windows
 	```
-	C:\<Some Directory to save code>\> git clone https://github.com/jennymclaughlin/dotnetcoreCFdemo.git
+	C:\<Some Directory to save code>\> git clone https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample.git
 	```
 
 
@@ -176,22 +176,22 @@ When you push the apps, PCF will provide an URL to access the application
 
 ### Step 1
 ##### Build the Dot Net Core Demo Application
-By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/jennymclaughlin/dotnetcoreCFdemo](https://github.com/jennymclaughlin/dotnetcoreCFdemo).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
+By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample](https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
 
-  ```bash
-  $ cd ../../dotnetcoreCFdemo
-  $ dotnet restore
-  $ dotnet build
-  $ cf push <YOUR-INITIALS>-dotnetdemo --random-route 
-  // This will give an output which is similar to this
-  requested state: started
-  instances: 1/1
-  usage: 1G x 1 instances
-  urls: dotnetdemo-surreptitious-supercapability.app.cloud.rick-ross.com
-  last uploaded: Thu Aug 31 20:17:49 UTC 2017
-  stack: cflinuxfs2
-  buildpack: ASP.NET Core (buildpack-1.0.19)
-  ```
+    ```bash
+    $ cd asp-dot-net-core-2-sample
+    $ dotnet restore
+    $ dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+    $ cf push <YOUR-INITIALS>-dotnetcore -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish --random-route 
+    // This will give an output which is similar to this
+    requested state: started
+    instances: 1/1
+    usage: 1G x 1 instances
+    urls: dotnetcore-rootless-eeriness.app.cloud.rick-ross.com
+    last uploaded: Sat Sep 2 17:46:35 UTC 2017
+    stack: cflinuxfs2
+    buildpack: ASP.NET Core (buildpack-1.0.25)
+    ```
 
 ### Step 2
 ##### Open the Application in a Browser
