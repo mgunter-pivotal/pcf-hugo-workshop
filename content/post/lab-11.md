@@ -100,18 +100,19 @@ Windows:
 
 Each participant will have their own user ids and passwords.  
 
-    ```bash
-    $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-    Email: myuserid
-    Password: ••••••••
-    
-    Select a space (or press enter to skip):
-    1. development
-    2. test
-    3. production
-    
-    Select any one and stick to that space for the rest of the workshop.
-    ```
+````
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+  Email: myuserid
+  Password: ••••••••
+
+  Select a space (or press enter to skip):
+  1. development
+  2. test
+  3. production
+
+  Select any one and stick to that space for the rest of the workshop.
+
+````
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
