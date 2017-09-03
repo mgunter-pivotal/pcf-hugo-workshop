@@ -222,4 +222,8 @@ And these are the details from the Config Server repository.
 
    <img src="/images/config-server-data.png" alt="Config Server Data" style="width: 70%"/>
    
-To see what values it is pulling from files in the git repository, open a browser and navigate to the backing repo which is located here: [https://github.com/rossr3-pivotal/config-repo](https://github.com/rossr3-pivotal/config-repo)
+To see what values it is pulling from files in the git repository, open a browser and navigate to the backing repo which is located here: [https://github.com/rossr3-pivotal/config-repo](https://github.com/rossr3-pivotal/config-repo). Look for properties files that have "foo" in their name. 
+
+For additional information on Steeltoe Configuration please see the official documentation.  [http://steeltoe.io/docs/steeltoe-configuration/](http://steeltoe.io/docs/steeltoe-configuration/)
+
+And if you have time, go through the same exercise using the .NET Framework which is located in the Configuration/src/AspDotNet4/SimpleCloudFoundry folder. Remember to modify the manifest file to use your configuration service instance name.
