@@ -4,7 +4,7 @@ Categories = ["lab"]
 Tags = ["dotnet","microservices","cloudfoundry","steeltoe"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab: Steeltoe Config Server"
-weight = 3
+weight = 70
 
 +++
 
@@ -32,7 +32,7 @@ Prerequisites
 	Download the source code. Download as Zip file and save it in local folder
 
 	```bash
-	   unzip Samples-master.zip
+	unzip Samples-master.zip
 	```
 	##### ---OR---
 
@@ -42,7 +42,7 @@ Prerequisites
 
 	For Linux/Mac:
 	```bash
-	$git clone https://github.com/rossr3-pivotal/Samples.git
+	$ git clone https://github.com/rossr3-pivotal/Samples.git
 	```
 
 	For Windows
@@ -81,46 +81,48 @@ In this workshop we are going to follow these steps to deploy .NET Framework and
 
 By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry. 
 
-Change into the correct folder, which is Configuration/src/AspDotNetCore/SimpleCloudFoundry Notice that we are going down two levels to the ViewEnvironment Folder:
+Change into the correct folder, which is Configuration/src/AspDotNetCore/SimpleCloudFoundry Notice that we are going down several levels to the SimpleCloudFoundry Folder:
 
 Linux/Mac:
 
-  ```bash
-  cd Configuration/src/AspDotNetCore/SimpleCloudFoundry
-  ```
+    ```bash
+    cd Configuration/src/AspDotNetCore/SimpleCloudFoundry
+    ```
 
 Windows:
 
-  ```
-  cd Configuration\src\AspDotNetCore\SimpleCloudFoundry
-  ```
+    ```
+    cd Configuration\src\AspDotNetCore\SimpleCloudFoundry
+    ```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
 Each participant will have their own user ids and passwords.  
 
-  ```bash
-  $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-  Email: myuserid
-  Password: ••••••••
-
-  Select a space (or press enter to skip):
-  1. development
-  2. test
-  3. production
-
-  Select any one and stick to that space for the rest of the workshop.
-  ```
+    ```bash
+    $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+    Email: myuserid
+    Password: ••••••••
+    
+    Select a space (or press enter to skip):
+    1. development
+    2. test
+    3. production
+    
+    Select any one and stick to that space for the rest of the workshop.
+    ```
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
-<img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
+    <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
 
 ### Step 3
 ##### Create a Config Server within Pivotal Cloud Foundry
 
-    ```bash
+Let's create a config server that the application will use to get configuration information from:
+
+    ```
     cf create-service p-config-server standard <YOUR INITIALS>-ConfigServer -c ./config-server.json
     ```
 
