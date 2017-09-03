@@ -49,7 +49,7 @@ In ths Lab you will bind your previous .NET applications to a MySQL database. Yo
 ### Step 2
 ##### Manually Binding the Service Instance to the Dot Net Environment Viewer Application
 
-1. Review the docs on [Binding a Service Instance](http://docs.pivotal.io/pivotalcf/devguide/services/bind-service.html)
+1. Review the docs on [Binding a Service Instance](http://doc-s.pivotal.io/pivotalcf/devguide/services/bind-service.html)
 2. Bind the mysql instance `<YOUR INITIALS>-env-db` to your app cities-service
     You can bind from the App Manager or from the `cli`
 
