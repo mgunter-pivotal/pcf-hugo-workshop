@@ -162,17 +162,17 @@ You can now proced to the next step.
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
-In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders to be your initials.
+In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholder with your initials.
 
    ```
    ---
    applications:
-   - name: <YOUR INITIALS>-ConfigApp
+   - name: foo
      env:
        ASPNETCORE_ENVIRONMENT: development
      services:
       - <YOUR INITIALS>-ConfigServer 
-    ```
+   ```
     
 Be sure to save the file before continuing.
 
