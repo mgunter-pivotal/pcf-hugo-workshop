@@ -116,7 +116,7 @@ Each participant will have their own user ids and passwords.
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
-    <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
+   <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
 
 ### Step 3
 ##### Create a Config Server within Pivotal Cloud Foundry
@@ -205,3 +205,21 @@ Which will result in output of
    buildpack: ASP.NET Core (buildpack-1.0.25)
    ```
 
+### Step 7
+##### View the application in a Browser
+
+Navigate the URL of the application in a browser. Then click on the CloudFoundry Settings menu / tab to view information from VCAP_APPLICATION and VCAP_SERVICES that are associated with this application running in Cloud Foundry. 
+
+Here is the type of detail you see for the CloudFoundry Settings. Notice that you can see the instance ID and other information about this aplication.
+
+   <img src="/images/cloud-foundry-settings.png" alt="CloudFoundry Settings" style="width: 70%;"/>
+   
+Here is the type of detail you see for the Config Server Settings.  
+
+   <img src="/images/config-server-settings.png" alt="Config Server Settings" style="width: 70%;"/>
+   
+And these are the details from the Config Server repository. 
+
+   <img src="/images/config-server-data.png" alt="Config Server Data" style="width: 70%"/>
+   
+To see what values it is pulling from files in the git repository, open a browser and navigate to the backing repo which is located here: [https://github.com/rossr3-pivotal/config-repo](https://github.com/rossr3-pivotal/config-repo)
