@@ -221,7 +221,7 @@ Run the following command to view the activity:
 
    ```
    cf logs fortuneservice --recent
-   ``
+   ```
    
 The output should look similar to this:
 
