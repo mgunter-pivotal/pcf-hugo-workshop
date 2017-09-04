@@ -10,7 +10,7 @@ weight = 70
 
 ### Goal
 
-Is to learn how to write applications that retreive their configuration from Spring Cloud Config Server  
+Learn how to write applications that retreive their configuration from Spring Cloud Config Server  
 
 <!--more-->
 
@@ -71,7 +71,7 @@ Prerequisites
 Steps
 --
 
-In this workshop we are going to follow these steps to deploy .NET Framework and .NET Core applications on Cloud foundry.
+In this workshop we are going to follow these steps to deploy a .NET Core application that communicates to the Configuration Server to retrieve its configuration.
 
 ***
 ## Deploying the Configuration Sample Application
@@ -179,7 +179,7 @@ Be sure to save the file before continuing.
 ### Step 6
 ##### Push the app
 
-Push the PCF DotNet Environment Viewer
+Push the Fortune Teller Service 
 
 On Linux/Mac:
 
@@ -196,6 +196,7 @@ On Linux/Mac:
 Which will result in output of
 
    ```bash
+   // This will give an output which is similar to this
    requested state: started
    instances: 1/1
    usage: 1G x 1 instances
