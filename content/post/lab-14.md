@@ -47,7 +47,7 @@ Please note that there is an internal limit on how far back the logs go back. Th
 Another way of viewing the applicaiton logs is using Apps Manager. Navigate to your Org and Space, click on your application and click on the Logs tab towards the top left. The output you see here is the same as the cf logs command you previously ran. Notice the play button that allows you to tail the logs in the UI.  
 
 ### Step 4
-##### PCF Metrics for Health, logging & events via the CLI
+##### PCF Metrics for Health, logging & events 
 
 Learning about how your application is performing is critical to help you diagnose and troubleshoot potential issues. Cloud Foundry gives you options for viewing the logs.
 
@@ -63,7 +63,7 @@ You can Monitor your Container Metrics, Network Metrics and Events for your app.
 
 <img src="/images/metrics-architecture.png" alt="Metrics" style="width: 70%;"/>
 
-### Step 2
+### Step 5
 ##### Search & Highlight Log entries
 
 Scroll down to the Logs section in PCF Metrics. Notice that you have the option to change the sort order of the logs, use the Type selection to choose which components you want to see in the logs as well as filtering the logs by keywords and highlighting words within them. You can also select a timeframe on the timeline to further limit the logs you see within the logging area.

@@ -26,9 +26,10 @@ When you vertically scale your application, you are increasing the amount of mem
 Scaling your application horizontally means that you are adding application instances to increase your application throughput and performance under load.
 
 Lets vertically scale the application to 1 GB of RAM.
-  ````bash
-  $ cf scale <YOUR INITIALS>-cities-service -m 1G
-  ````
+
+   ````bash
+   $ cf scale <YOUR INITIALS>-cities-service -m 1G
+   ````
 
 
 ### Step 2
@@ -37,15 +38,17 @@ Lets vertically scale the application to 1 GB of RAM.
 Now scale your application down to 700 MB.
 
 Next, lets scale up your application to 2 instances
-  ````bash
-  $ cf scale <YOUR INITIALS>-cities-service -i 2
-  ````
+
+   ````bash
+   $ cf scale <YOUR INITIALS>-cities-service -i 2
+   ````
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
-  ````bash
-  $ cf app <YOUR INITIALS>-cities-service
-  ````
+
+   ````bash
+   $ cf app <YOUR INITIALS>-cities-service
+   ````
 
 
 Once the second instance as started, scale the app back down to one instance.
@@ -79,8 +82,19 @@ To verify that the application is running, use the following curl commands (or u
 ---
 
 ## Using the Autoscaler
-### Step 1
+### Step 4 PCF Metrics for Health, logging & events 
 
+Learning about how your application is performing is critical to help you diagnose and troubleshoot potential issues. Cloud Foundry gives you options for viewing the logs.
+
+Open the metrics dashboard by opening up Apps Manager, navigating to your org and space, and clicking on your application. In the Instances section, you'll see a View in PCF Metrics link. Click this link.
+
+<img src="/images/cities-service-apps-manager" alt="Metrics" sytle="width: 70%; "/>
+
+This will open up the PCF Metrics window for your application. If you are prompted to log in again, enter the same credentials that you have used before.
+
+<img src="/images/cities-service-pcf-metrics" alt="Metrics" style="width: 70%;"/>
+
+You can Monitor your Container Metrics, Network Metrics and Events for your app. Explore your logs, which shows all your app logs streamed using the Loggregator.
 
 
 ##### Discussion
