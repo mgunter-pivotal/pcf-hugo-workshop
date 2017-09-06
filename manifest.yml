@@ -1,8 +1,8 @@
 ---
 applications:
-- name: pcf-solera-workshop
+- name: pcf-identifix-workshop
   memory: 64M
   instances: 1
-  domain: app.cloud.rick-ross.com 
+  domain: cfapps.io
   path: public
   buildpack: staticfile_buildpack
