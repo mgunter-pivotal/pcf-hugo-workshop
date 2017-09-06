@@ -4,7 +4,7 @@ Categories = ["lab"]
 Tags = ["dotnet","microservices","cloudfoundry","external-services"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab: .NET Core Binding to External Services"
-weight = 3
+weight = 5
 
 +++
 
@@ -125,3 +125,151 @@ Login to the App Console at https://app.cloud.rick-ross.com
    dotnet restore --configfile nuget.config
    dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
    ```
+
+### Step 4
+##### Push the app
+
+Push the Fortune Teller Service
+
+On Linux/Mac:
+
+  ```bash
+  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+  ```
+  
+ On Windows: 
+  
+  ```bash
+  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+  ```
+
+Which will result in output of
+
+   ```bash
+   // This will give an output which is similar to this
+   requested state: started
+   instances: 1/1
+   usage: 1G x 1 instances
+   urls: fortuneservice.app.cloud.rick-ross.com
+   last uploaded: Tue Sep 5 23:38:58 UTC 2017
+   stack: cflinuxfs2
+   buildpack: ASP.NET Core (buildpack-1.0.25)
+   ```
+
+### Step 5
+##### Visit the Applicaiton in the Browser
+
+Open a browser and visit the /api/fortunes/random endpoint. For my service, this is http://fortuneservice.app.cloud.rick-ross.com/api/fortunes/random. Yours will be different.
+
+<img src="/images/plain-fortune-service.png" alt="Git style="width: 40%;"/>
+
+## Deploying the Fortune Teller UI Application
+
+### Step 7
+##### Visit the Applicaiton in the Browser
+
+Open a browser and visit the /api/fortunes/random endpoint. For my service, this is http://fortuneservice.app.cloud.rick-ross.com/api/fortunes/random. Yours will be different.
+
+<img src="/images/plain-fortune-service.png" alt="Git style="width: 40%;"/>
+
+## Deploying the Fortune Teller UI Application
+
+### Step 1
+##### Build the Fortune Teller UI Application
+
+By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry. 
+
+Change into the correct folder, which is BareMicroservices/src/AspDotNetCore/FortuneTeller/Fortune-Teller-UI. Notice that we are going down several levels to the Fortune-Teller-UI Folder:
+
+Linux/Mac:
+
+   ```bash
+   cd ../Fortune-Teller-UI
+   ```
+
+Windows:
+
+   ```
+   cd ../Fortune-Teller-UI
+   ```
+
+### Step 2
+##### Create a User Provided Service in Pivotal Cloud Foundry
+
+Let's create a User Provided Service that will point to our Fortune Teller Service application that we just deployed. 
+
+   ```
+   cf create-user-provided-service <YOUR INITIALS>-FortuneService -p "uri"
+   
+   uri>
+   ```
+
+When prompted to enter the uri, enter in your URL of where your application lives. In my case, it is located here: http://fortuneservice.app.cloud.rick-ross.com/
+
+If you want to double check your work, bring up Apps Manager, navigate to your org and space and look at the service you created. 
+
+### Step 4
+#### Prepare the .NET Core application for deployment
+
+   ```bash
+   dotnet restore --configfile nuget.config
+   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+   ```
+
+### Step 5
+##### Modify the Manifest to Match the Name of Your Service
+
+In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders with your initials. Notice this needs the service we created earlier in this lab. 
+
+   ```
+   ---
+   applications:
+  - name: fortuneui
+    env:
+      ASPNETCORE_ENVIRONMENT: Production
+    services:
+      - <YOUR INITIALS>-FortuneService
+   ```
+    
+Be sure to save the file before continuing.
+
+### Step 6
+##### Push the app
+
+Push the Fortune Teller UI
+
+On Linux/Mac:
+
+  ```bash
+  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+  ```
+  
+ On Windows: 
+  
+  ```bash
+  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+  ```
+
+Which will result in output of
+
+   ```bash
+   // This will give an output which is similar to this
+   requested state: started
+   instances: 1/1
+   usage: 1G x 1 instances
+   urls: fortuneui.app.cloud.rick-ross.com
+   last uploaded: Mon Sep 4 00:21:40 UTC 2017
+   stack: cflinuxfs2
+   buildpack: ASP.NET Core (buildpack-1.0.25)
+   ```
+
+### Step 7
+##### Visit the Fortune UI application in a Browser
+
+Open the application URL in a browser. You will see something similar to this:
+
+<img src="/images/plain-fortune-ui.png" alt="Fortune UI" style="width: 70%;"/>
+
+
+
+
