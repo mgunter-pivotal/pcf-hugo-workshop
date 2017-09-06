@@ -3,8 +3,8 @@
 Categories = ["lab"]
 Tags = ["dotnet","microservices","cloudfoundry","external-services"]
 date = "2017-08-29T07:49:11-04:00"
-title = "Lab: .NET Core Binding to External Services"
-weight = 5
+title = "Lab: Dot NET Core Binding to External Services"
+weight = 6
 
 +++
 
