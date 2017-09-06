@@ -1,16 +1,16 @@
 +++
 
 Categories = ["lab"]
-Tags = ["logging-metrics","microservices","cloudfoundry"]
+Tags = ["logging-metrics","microservices","cloudfoundry", "donnet"]
 date = "2017-08-29T07:49:11-04:00"
-title = "Lab: Logging and Metrics"
+title = "Lab: .NET Logging and Metrics"
 weight = 3
 
 +++
 
 ### Goal
 
-To take a previously deployed microservice and demonstrate how to view logging and metrics.
+To take a previously deployed microservice and demonstrate how to view logs and metrics.
 
 <!--more-->
 
@@ -24,10 +24,10 @@ You have successfully completed the previous lab.
 
 When you want to see the logs as you interact with your microservice, you can use the cf logs command as shown below. This will open a view into the application logs until you stop the process.
 
-Run the following command and then open up the cities-service endpoint in a browser and watch the logs
+Run the following command and then open up the Dot Net Environment Viewer Application endpoint in a browser and watch the logs
 
     ````bash
-    $ cf logs <YOUR INITIALS>-cities-service
+    $ cf logs <YOUR INITIALS>-env
     ````
 
 ### Step 2
@@ -36,7 +36,7 @@ Run the following command and then open up the cities-service endpoint in a brow
 When you want to view logs that have already occured, use the cf logs command with the --recent option. Run the command below and see what happens.
 
     ````bash
-    $ cf logs <YOUR INITIALS>-cities-service --recent
+    $ cf logs <YOUR INITIALS>-env --recent
     ````
 
 Please note that there is an internal limit on how far back the logs go back. This command is meant to retrieve logs that have just recently occurred. We'll talk about other alternatives a bit later.
