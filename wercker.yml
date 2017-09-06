@@ -19,7 +19,7 @@ deploy:
         password: $CF_PASS
         organization: $CF_ORG
         space: $CF_SPACE
-        skip_ssl: true
+        skip_ssl: false
         appname: pcf-identifix-workshop-blue
         alt_appname: pcf-identifix-workshop-green
         domain: cfapps.io
