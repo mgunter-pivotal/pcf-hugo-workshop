@@ -1,10 +1,10 @@
 +++
 
 Categories = ["lab"]
-Tags = ["scaling","microservices","cloudfoundry"]
+Tags = ["scaling","microservices","cloudfoundry","dotnet"]
 date = "2017-08-29T07:49:11-04:00"
-title = "Lab: Scale an Application"
-weight = 4
+title = "Lab: Dot Net Scale an Application"
+weight = 6
 
 +++
 
@@ -28,7 +28,7 @@ Scaling your application horizontally means that you are adding application inst
 Lets vertically scale the application to 1 GB of RAM.
 
    ````bash
-   $ cf scale <YOUR INITIALS>-cities-service -m 1G
+   $ cf scale <YOUR INITIALS>-env -m 1G
    ````
 
 
@@ -40,14 +40,14 @@ Now scale your application down to 700 MB.
 Next, lets scale up your application to 2 instances
 
    ````bash
-   $ cf scale <YOUR INITIALS>-cities-service -i 2
+   $ cf scale <YOUR INITIALS>-env -i 2
    ````
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
 
    ````bash
-   $ cf app <YOUR INITIALS>-cities-service
+   $ cf app <YOUR INITIALS>-env
    ````
 
 
@@ -59,23 +59,10 @@ You can also use the Autoscaler service from the marketplace and bind it to your
 
 <br>
 ### Step 3
-##### Verify the app from the Console
+##### Verify the app from the Browser
 
 To verify that the application is running, use the following curl commands (or use your browser) to retrieve data from the service or use a browser to access the URL:
 
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities
-  ````
-
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities/49
-  ````
-
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities?size=5
-  ````
-
-  For Windows, use your browser and visit the corresponding URLs.
 
 <br>
 
@@ -86,20 +73,20 @@ To verify that the application is running, use the following curl commands (or u
 
 The Autoscaler is a Marketplace Service available to bind to your applications just like any other service. You have the ability to select what criteria causes your applicatton to scale up and down. For the purpose of this lab, we'll scale the application down from 2 instances to 1. 
 
-**Using either the App Manager or the CLI, be sure you have 2 application instances running of your cities-service application. **
+**Using either the App Manager or the CLI, be sure you have 2 application instances running of your Environment Viewer application. **
 
 ### Step 5 - Create & Bind to Autoscaler
 
-Let's bind the Autoscaler Service to the Cities Service application. Navigate to the Marketplace Services and select the Autoscaler Service. 
+Let's bind the Autoscaler Service to the Environment Viewer application. Navigate to the Marketplace Services and select the Autoscaler Service. 
 
   <img src="/images/auto-scaler-service.png" alt="Auto Scaler" style="width: 70%; "/>
 
 Click the Select this Plan button and enter in a few details
 
    ```
-   Instance Name: <YOUR INITIALS>-cities-service-as
+   Instance Name: <YOUR INITIALS>-env-as
    Space: Default should be fine. It needs to match the name of the space where cities-service lives
-   Bind to App: Select your <YOUR INITIALS>-cities-service application
+   Bind to App: Select your <YOUR INITIALS>-env application
    ```
    
 Once the data is entered, click the Add button.    
@@ -108,13 +95,13 @@ Once the data is entered, click the Add button.
 
 Now click on the App Autoscaler link that is next your newly created service instance. 
 
-   <img src="/images/cities-service-as.png" alt="Autoscaler Details"  style="width: 70%; "/>
+   <img src="/images/env-as.png" alt="Autoscaler Details"  style="width: 70%; "/>
    
 ### Step 6 - Configure Autoscaler
    
 Next, click the Manage link in the upper right. 
 
-<img src="/images/cities-service-as-parms.png" alt="Autoscaler Parameters" style="width: 70%; "/>
+<img src="/images/env-as-parms.png" alt="Autoscaler Parameters" style="width: 70%; "/>
 
 Before we can enable the Autoscaler, set the minimum and maximum number of instances. Click the edit button next to the Instances and enter these values:
 
@@ -124,7 +111,7 @@ Before we can enable the Autoscaler, set the minimum and maximum number of insta
    ```
 And save those values. Now, edit the Scaling rules and enter in values of your chosing. For example, change the rule to HTTP Throughput and enter 10 for scaling down and 50 for scaling up. Save these values. Finally, slide the button next to Disabled to enable the service. 
 
-<img src="/images/cities-service-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
+<img src="/images/env-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
 
 Navigate to your applicaiton in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change. 
 
