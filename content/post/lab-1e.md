@@ -50,7 +50,7 @@ First push a new version of the app with a blue route.
 Next, you can push a new version of the app with a green route.
 
     // Push the app version v2 with the hostname as green
-    $ cf push <YOUR INITIALS>-cities-hello-v2 --hostname <YOUR INITIALS>-cities-hello-green -f manifest.yml
+    $ cf push <YOUR INITIALS>-cities-hello-v2 --hostname <YOUR INITIALS>-cities-hello-green -f manifest.hello
     // Map the outside route to this green version. Now your outside route is mapped to both blue and green
     $ cf map-route <YOUR INITIALS>-cities-hello-v2 app.cloud.rick-ross.com --hostname <YOUR INITIALS>-cities-hello
     // Unmap the outside route to the blue version. All the traffic is now directed to v2

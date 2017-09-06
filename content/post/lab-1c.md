@@ -32,9 +32,9 @@ Lets vertically scale the application to 1 GB of RAM.
 
 
 ### Step 2
-##### Scale the Applicaiton in the Console
+##### Scale the Application in the Console
 
-Now scale your application down to 512 MB.
+Now scale your application down to 700 MB.
 
 Next, lets scale up your application to 2 instances
   ````bash
@@ -75,6 +75,13 @@ To verify that the application is running, use the following curl commands (or u
   For Windows, use your browser and visit the corresponding URLs.
 
 <br>
+
+---
+
+## Using the Autoscaler
+### Step 1
+
+
 
 ##### Discussion
 

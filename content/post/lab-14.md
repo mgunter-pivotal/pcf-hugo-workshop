@@ -1,10 +1,10 @@
 +++
 
 Categories = ["lab"]
-Tags = ["logging-metrics","microservices","cloudfoundry", "donnet"]
+Tags = ["logging-metrics","cloudfoundry", "dotnet"]
 date = "2017-08-29T07:49:11-04:00"
 title = "Lab: .NET Logging and Metrics"
-weight = 3
+weight = 5
 
 +++
 
