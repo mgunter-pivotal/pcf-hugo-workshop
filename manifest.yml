@@ -1,6 +1,6 @@
 ---
 applications:
-- name: pcf-solera-workshop
+- name: pcf-hollander-workshop
   memory: 64M
   instances: 1
   domain: app.cloud.rick-ross.com 

@@ -20,7 +20,7 @@ deploy:
         organization: $CF_ORG
         space: $CF_SPACE
         skip_ssl: true
-        appname: pcf-solera-workshop-blue
-        alt_appname: pcf-solera-workshop-green
+        appname: pcf-hollander-workshop-blue
+        alt_appname: pcf-hollander-workshop-green
         domain: app.cloud.rick-ross.com 
-        hostname: pcf-solera-workshop
+        hostname: pcf-hollander-workshop
