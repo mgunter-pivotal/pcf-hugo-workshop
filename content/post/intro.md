@@ -2,7 +2,7 @@
 Categories = ["agenda","workshop"]
 Tags = ["logistics","speakers"]
 date = "2017-08-29T07:44:03+04:00"
-title = "Welcome to the Pivotal Cloud Foundry Workshop @ Identifix""
+title = "Welcome to the Pivotal Cloud Foundry Workshop @ Identifix"
 type = "Introduction"
 weight = 1
 +++
