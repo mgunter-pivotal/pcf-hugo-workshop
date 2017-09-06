@@ -163,16 +163,8 @@ Open a browser and visit the /api/fortunes/random endpoint. For my service, this
 
 <img src="/images/plain-fortune-service.png" alt="Git style="width: 40%;"/>
 
-## Deploying the Fortune Teller UI Application
-
-### Step 7
-##### Visit the Applicaiton in the Browser
-
-Open a browser and visit the /api/fortunes/random endpoint. For my service, this is http://fortuneservice.app.cloud.rick-ross.com/api/fortunes/random. Yours will be different.
-
-<img src="/images/plain-fortune-service.png" alt="Git style="width: 40%;"/>
-
-## Deploying the Fortune Teller UI Application
+***
+## Deploy the Fortune Teller UI 
 
 ### Step 1
 ##### Build the Fortune Teller UI Application
