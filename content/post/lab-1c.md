@@ -90,7 +90,11 @@ The Autoscaler is a Marketplace Service available to bind to your applications j
 
 ### Step 5 - Create & Bind to Autoscaler
 
-Let's bind the Autoscaler Service to the Cities Service application. Navigate to the Marketplace Services and select the Autoscaler Service. 
+Let's bind the Autoscaler Service to the Cities Service application. Navigate to the Marketplace Services.
+
+  <img src="/images/dev-space-services.png" alt="Services"  style="width: 70%; "/>
+
+Select the Autoscaler Service. 
 
   <img src="/images/auto-scaler-service.png" alt="Auto Scaler" style="width: 70%; "/>
 
@@ -104,7 +108,7 @@ Click the Select this Plan button and enter in a few details
    
 Once the data is entered, click the Add button.    
 
-   <img src="/images/dev-space-services.png" alt="Services"  style="width: 70%; "/>
+   <img src="/images/cities-service-create-as.png" alt="Services"  style="width: 70%; "/>
 
 Now click on the App Autoscaler link that is next your newly created service instance. 
 
@@ -126,7 +130,7 @@ And save those values. Now, edit the Scaling rules and enter in values of your c
 
 <img src="/images/cities-service-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
 
-Navigate to your applicaiton in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change. 
+Navigate to your application in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change. 
 
 ##### Discussion
 
