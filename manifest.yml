@@ -3,6 +3,6 @@ applications:
 - name: pcf-identifix-workshop
   memory: 64M
   instances: 1
-  domain: cfapps.io
+  domain: app.cloud.rick-ross.com 
   path: public
   buildpack: staticfile_buildpack

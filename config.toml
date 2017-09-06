@@ -1,4 +1,4 @@
-baseurl = "http://pcf-identifix-workshop.cfapps.io"
+baseurl = "http://pcf-identifix-workshop.app.cloud.rick-ross.com"
 languageCode = "en-us"
 title = "Cloud Foundry Workshop"
 
