@@ -71,20 +71,34 @@ To install the plugin you run the following command from the location that you s
    
 Once the plugin is installed ...
 
-    $ cd pcf-dotnet-environment-viewer/ViewEnvironment
-    // Append the build number to the app Name
-    $ nano manifest.hello // Change the app name and append the build number, on Windows use wordpad manifest.hello
+   ```bash
+   $ cd pcf-dotnet-environment-viewer/ViewEnvironment
+   // Append the build number to the app Name
+   $ nano manifest.yml // Change the app name and append the build number, on Windows use wordpad manifest.yml
+   ```
+   
+The contents of the manifest should look like this
 
-<img src="/images/pcf-blue-green-b100.png" alt="Blue Green Deployment Build" style="width: 50%;"/>
-
-    $ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
+   ```bash
+   ---
+   applications:
+   - name: <YOUR INITIALS>-env-b100
+     memory: 512m
+     stack: windows2012R2
+     buildpack: hwc_buildpack
+   ```
+   
+   ```bash
+   $ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
+   ```
 
 ##### Option 3 (This is as bash script and works only on Linux/OSX)
 
 If you would like to inject build numbers in your app names here is a script you could use to do blue green deployments in the cities-hello directory which only works on a Mac
 
+   ```bash
     Usage: blue-green.sh <app-name> <build-number> <domain>
-
+   ```
 
   ````bash
 
