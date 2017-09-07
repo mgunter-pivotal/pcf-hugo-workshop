@@ -69,5 +69,5 @@ The Spring boot app is deployed in Cloud Foundry as a Docker Container
 #### Run it in Cloud Foundry
 
    ```bash
-      $cf push -o <docker-user>/gs-spring-boot-docker -c "java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
+      $cf push <YOUR INITIALS>-docker-example -o <docker-user>/gs-spring-boot-docker -c "java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
    ```

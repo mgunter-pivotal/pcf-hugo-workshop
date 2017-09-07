@@ -49,7 +49,7 @@ Prerequisites
 	```
 	C:\<Some Directory to save code>\> git clone https://github.com/rossr3-pivotal/Samples.git
 	```
-	
+
 3. Environment Proxy Setup (Optional depending on network configuration)
 
 	If you are connected to a network that requires using a proxy, you'll need to set the appropriate environment variables. In the repository there is a file called *setenv.bat*.
@@ -67,7 +67,7 @@ Prerequisites
 	set HTTP_PROXY=<your http proxy>
 	set HTTPS_PROXY=<your https proxy>
 	```
-	
+
 Steps
 --
 
@@ -79,7 +79,7 @@ In this workshop we are going to follow these steps to deploy a .NET Core applic
 ### Step 1
 ##### Build the Configuration Sample Application
 
-By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry. 
+By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry.
 
 Change into the correct folder, which is Configuration/src/AspDotNetCore/SimpleCloudFoundry Notice that we are going down several levels to the SimpleCloudFoundry Folder:
 
@@ -94,7 +94,7 @@ Windows:
    ```
    cd Configuration\src\AspDotNetCore\SimpleCloudFoundry
    ```
-  
+
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
@@ -133,24 +133,24 @@ Note that this step might take a bit to complete. Please wait until you see that
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name              service           plan       bound apps   last operation
    rr-ConfigServer   p-config-server   standard                create in progress
    ```
-    
+
 Once this is successful, you will see this:
 
    ```bash
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name              service           plan       bound apps   last operation
    rr-ConfigServer   p-config-server   standard                create succeeded
    ```
 
-You can now proced to the next step. 
-    
+You can now proced to the next step.
+
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
@@ -171,26 +171,26 @@ In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> p
      env:
        ASPNETCORE_ENVIRONMENT: development
      services:
-      - <YOUR INITIALS>-ConfigServer 
+      - <YOUR INITIALS>-ConfigServer
    ```
-    
+
 Be sure to save the file before continuing.
 
 ### Step 6
 ##### Push the app
 
-Push the Fortune Teller Service 
+Push the Fortune Teller Service
 
 On Linux/Mac:
 
   ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+  $ cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish
   ```
-  
- On Windows: 
-  
+
+ On Windows:
+
   ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+  cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
   ```
 
 Which will result in output of
@@ -209,21 +209,21 @@ Which will result in output of
 ### Step 7
 ##### View the application in a Browser
 
-Navigate the URL of the application in a browser. Then click on the CloudFoundry Settings menu / tab to view information from VCAP_APPLICATION and VCAP_SERVICES that are associated with this application running in Cloud Foundry. 
+Navigate the URL of the application in a browser. Then click on the CloudFoundry Settings menu / tab to view information from VCAP_APPLICATION and VCAP_SERVICES that are associated with this application running in Cloud Foundry.
 
 Here is the type of detail you see for the CloudFoundry Settings. Notice that you can see the instance ID and other information about this aplication.
 
    <img src="/images/cloud-foundry-settings.png" alt="CloudFoundry Settings" style="width: 70%;"/>
-   
+
 Here is the type of detail you see for the Config Server Settings.  
 
    <img src="/images/config-server-settings.png" alt="Config Server Settings" style="width: 70%;"/>
-   
-And these are the details from the Config Server repository. 
+
+And these are the details from the Config Server repository.
 
    <img src="/images/config-server-data.png" alt="Config Server Data" style="width: 70%"/>
-   
-To see what values it is pulling from files in the git repository, open a browser and navigate to the backing repo which is located here: [https://github.com/rossr3-pivotal/config-repo](https://github.com/rossr3-pivotal/config-repo). Look for properties files that have "foo" in their name. 
+
+To see what values it is pulling from files in the git repository, open a browser and navigate to the backing repo which is located here: [https://github.com/rossr3-pivotal/config-repo](https://github.com/rossr3-pivotal/config-repo). Look for properties files that have "foo" in their name.
 
 For additional information on Steeltoe Configuration please see the official documentation.  [http://steeltoe.io/docs/steeltoe-configuration/](http://steeltoe.io/docs/steeltoe-configuration/)
 

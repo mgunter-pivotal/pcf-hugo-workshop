@@ -71,7 +71,7 @@ To verify that the application is running, use the following curl commands (or u
 ## Using the Autoscaler
 ### Step 4 Scaling with Autoscaler
 
-The Autoscaler is a Marketplace Service available to bind to your applications just like any other service. You have the ability to select what criteria causes your applicatton to scale up and down. For the purpose of this lab, we'll scale the application down from 2 instances to 1. 
+The Autoscaler is a Marketplace Service available to bind to your applications just like any other service. You have the ability to select what criteria causes your applicatton to scale up and down. For the purpose of this lab, we'll scale the application down from 2 instances to 1.
 
 **Using either the App Manager or the CLI, be sure you have 2 application instances running of your Environment Viewer application. **
 
@@ -81,7 +81,7 @@ Let's bind the Autoscaler Service to the Environment Viewer application. Navigat
 
   <img src="/images/dev-space-services.png" alt="Services"  style="width: 70%; "/>
 
-Select the Autoscaler Service. 
+Select the Autoscaler Service.
 
   <img src="/images/auto-scaler-service.png" alt="Auto Scaler" style="width: 70%; "/>
 
@@ -92,18 +92,18 @@ Click the Select this Plan button and enter in a few details
    Space: Default should be fine. It needs to match the name of the space where cities-service lives
    Bind to App: Select your <YOUR INITIALS>-env application
    ```
-   
+
 Once the data is entered, click the Add button.    
 
    <img src="/images/env-create-as.png" alt="Services"  style="width: 70%; "/>
 
-Now click on the App Autoscaler link that is next your newly created service instance. 
+Now click on the App Autoscaler link that is next your newly created service instance.
 
    <img src="/images/env-as.png" alt="Autoscaler Details"  style="width: 70%; "/>
-   
+
 ### Step 6 - Configure Autoscaler
-   
-Next, click the Manage link in the upper right. 
+
+Next, click the Manage link in the upper right.
 
 <img src="/images/env-as-parms.png" alt="Autoscaler Parameters" style="width: 70%; "/>
 
@@ -113,11 +113,11 @@ Before we can enable the Autoscaler, set the minimum and maximum number of insta
    Minimum: 1
    Maximum: 3
    ```
-And save those values. Now, edit the Scaling rules and enter in values of your chosing. For example, change the rule to HTTP Throughput and enter 10 for scaling down and 50 for scaling up. Save these values. Finally, slide the button next to Disabled to enable the service. 
+And save those values. Now, edit the Scaling rules and enter in values of your chosing. For example, change the rule to HTTP Throughput and enter 10 for scaling down and 50 for scaling up. Save these values. Finally, slide the button next to Disabled to enable the service.
 
 <img src="/images/env-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
 
-Navigate to your application in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change. 
+Navigate to your application in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change.
 
 ##### Discussion
 

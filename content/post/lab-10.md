@@ -10,7 +10,7 @@ weight = 4
 
 ### Goal
 
-To take a previously deployed .NET microservices and demonstrate how to bind it to backing services. 
+To take a previously deployed .NET microservices and demonstrate how to bind it to backing services.
 
 <!--more-->
 
@@ -96,21 +96,21 @@ Next, edit the Dot Net Environment Viewer application with a manifest to help au
     wordpad.exe manifest.yml
     ````
 
-3. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for Environment Viewer. This step will require you to look at the documentation link above. 
+3. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for Environment Viewer. This step will require you to look at the documentation link above.
 
 4. Test your manifest by re-pushing your app with no parameters:
 
     ```bash
-    $ cf push 
+    $ cf push <YOUR INITIALS>-env
     ```
 
     Notice that using a manifest, you have moved the need for multiple commands into one location. In addition, using manifests gives you consistency between your deployment environments (Dev, QA, UAT, Performance, Production, etc) so you have a repeatable and documented way of deploying software.
-    
+
     __NOTE__
-    
+
     > The default manifest file for an app is `manifest.yml` and it if is present, it is automatically picked without specifying the manifest file option (e.g. -f my-manifest-file.yml).
 
-5. Once you are comfortable of what we just did, let's clean up the resources. 
+5. Once you are comfortable of what we just did, let's clean up the resources.
 
 
     ```bash
@@ -118,9 +118,9 @@ Next, edit the Dot Net Environment Viewer application with a manifest to help au
     $ cf delete-service <YOUR INITIALS>-env-db
     ```
 
-## Dot Net Core 
+## Dot Net Core
 
-In the interest of time, we will not be walking through the steps to bind a service to a .NET Core application because they are fundamentally the same thing we have already done. When you are starting with a brand new project the steps would look like this: 
+In the interest of time, we will not be walking through the steps to bind a service to a .NET Core application because they are fundamentally the same thing we have already done. When you are starting with a brand new project the steps would look like this:
 
 #### Step 1 - Create the Service
 #### Step 2 - Push the Application
@@ -132,10 +132,9 @@ If you already have an application deployed on Cloud Foundry and now want to bin
 #### Step 2 - Bind the Application to the Service
 #### Step 3 - Restart the Application
 
-##### Discussion 
+##### Discussion
 
-* How do you provision services today? 
+* How do you provision services today?
 * How long does it take to get access to those services?
 * What mechanisms do you use today to provide the connection information to the service?
 ***
-

@@ -48,7 +48,7 @@ Prerequisites
 	```
 	C:\<Some Directory to save code>\> git clone https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git
 	```
-	
+
 3. Clone or Download the ASP.NET Core 2 Sample
 
 	[ASP.NET Core Repo:  https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample](https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample)
@@ -96,7 +96,7 @@ Prerequisites
 	set HTTP_PROXY=<your http proxy>
 	set HTTPS_PROXY=<your https proxy>
 	```
-	
+
 Steps
 --
 
@@ -107,9 +107,9 @@ In this workshop we are going to follow these steps to deploy .NET Framework and
 
 ### Step 1
 ##### Build the Dot Net Environment Viewer Application
-By this point, you should have cloned (or forked, or downloaded) the [DotNetAttendees Repo](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git).  Now prepare the application to deploy to Cloud Foundry. 
+By this point, you should have cloned (or forked, or downloaded) the [DotNetAttendees Repo](https://github.com/Pivotal-Field-Engineering/pcf-dotnet-environment-viewer.git).  Now prepare the application to deploy to Cloud Foundry.
 
-For this example, we do not need to "build" the application. For other .NET Framework applicaitons, you would publish the project to a specified folder and do the "cf push" from that folder. 
+For this example, we do not need to "build" the application. For other .NET Framework applicaitons, you would publish the project to a specified folder and do the "cf push" from that folder.
 
 Change into the correct folder. Notice that we are going down two levels to the ViewEnvironment Folder:
 
@@ -124,7 +124,7 @@ Windows:
   ```
   cd pcf-dotnet-environment-viewer\ViewEnvironment
   ```
-  
+
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
@@ -154,7 +154,7 @@ Login to the App Console at https://app.cloud.rick-ross.com
 Push the PCF DotNet Environment Viewer
 
   ```bash
-  $ cf push <YOUR-INITIALS>-env 
+  $ cf push <YOUR-INITIALS>-env
   // This will give an output which is similar to this
   requested state: started
   instances: 1/1
@@ -169,7 +169,7 @@ Push the PCF DotNet Environment Viewer
 ##### Open the Application in a Browser
 
 When you push the apps, PCF will provide an URL to access the application
-    
+
   <img src="/images/pcf-env-viewer.png" alt="PCF Environment Viewer" style="width: 70%;"/>
 
 ## Deploying .NET Core Applications
@@ -182,7 +182,7 @@ By this point, you should have cloned (or forked, or downloaded) the [Dot Net Co
     $ cd asp-dot-net-core-2-sample
     $ dotnet restore
     $ dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-    $ cf push <YOUR-INITIALS>-dotnetcore -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish --random-route 
+    $ cf push <YOUR-INITIALS>-dotnetcore -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish --random-route
     // This will give an output which is similar to this
     requested state: started
     instances: 1/1
@@ -199,8 +199,8 @@ By this point, you should have cloned (or forked, or downloaded) the [Dot Net Co
 When you push applications, it will provide you the URL to access it.
 
   <img src="/images/dot-net-core-app.png" alt="Dot Net Core Demo" style="width: 70%;"/>
-    
-##### Recap: 
+
+##### Recap:
 
 > Cloud Foundry Haiku </br>
   Here is my source code </br>
@@ -214,4 +214,3 @@ When you push applications, it will provide you the URL to access it.
 * How do or would you deploy a .NET Framework Application today?
 * How do or would you deploy a .NET Core Application today?
 ***
-

@@ -10,7 +10,7 @@ weight = 71
 
 ### Goal
 
-Learn how to write applications that retreive their configuration from Spring Cloud Config Server 
+Learn how to write applications that retreive their configuration from Spring Cloud Config Server
 
 <!--more-->
 
@@ -53,7 +53,7 @@ Prerequisites
 	```
 	C:\<Some Directory to save code>\> git clone https://github.com/rossr3-pivotal/Samples.git
 	```
-	
+
 3. Environment Proxy Setup (Optional depending on network configuration)
 
 	If you are connected to a network that requires using a proxy, you'll need to set the appropriate environment variables. In the repository there is a file called *setenv.bat*.
@@ -71,11 +71,11 @@ Prerequisites
 	set HTTP_PROXY=<your http proxy>
 	set HTTPS_PROXY=<your https proxy>
 	```
-	
+
 Steps
 --
 
-In this workshop we are going to follow these steps to deploy a couple of .NET Core applications that use the Service Discovery and the Circuit Breaker Dashboard to view the health of the microservices. 
+In this workshop we are going to follow these steps to deploy a couple of .NET Core applications that use the Service Discovery and the Circuit Breaker Dashboard to view the health of the microservices.
 
 ***
 ## Deploying the Fortune Teller Service
@@ -83,7 +83,7 @@ In this workshop we are going to follow these steps to deploy a couple of .NET C
 ### Step 1
 ##### Build the Fortune Teller Service
 
-By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry. 
+By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry.
 
 Change into the correct folder, which is CircuitBreaker/src/AspDotNetCore/FortuneTeller/Fortune-Teller-Service. Notice that we are going down several levels to the Fortune-Teller-Service Folder:
 
@@ -98,7 +98,7 @@ Windows:
    ```
    cd Configuration\src\AspDotNetCore\FortuneTeller/Fortune-Teller-Service
    ```
-  
+
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
@@ -137,24 +137,24 @@ Note that this step might take a bit to complete. Please wait until you see that
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name                  service              plan       bound apps   last operation
    rr-DiscoveryService   p-service-registry   standard                create in progress
    ```
-    
+
 Once this is successful, you will see this:
 
    ```bash
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name                  service              plan       bound apps   last operation
    rr-DiscoveryService   p-service-registry   standard                create succeeded
    ```
 
-You can now proced to the next step. 
-    
+You can now proced to the next step.
+
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
@@ -175,28 +175,28 @@ In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> p
      # Uncomment to use C2C networking with SSL connections
      # command: ./Fortune-Teller-Service --server.urls "https://0.0.0.0:$PORT"
      env:
-       ASPNETCORE_ENVIRONMENT: Development 
+       ASPNETCORE_ENVIRONMENT: Development
      services:
       - <YOUR INITIALS>-DiscoveryService
    ```
-   
+
 Be sure to save the file before continuing.
 
 ### Step 6
 ##### Push the app
 
-Push the Fortune Service 
+Push the Fortune Service
 
 On Linux/Mac:
 
   ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+  $ cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish
   ```
-  
- On Windows: 
-  
+
+ On Windows:
+
   ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+  cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
   ```
 
 Which will result in output of
@@ -220,9 +220,9 @@ Once the application is running, you'll notice Steeltoe and Eurkea logs coming t
 Run the following command to view the activity:
 
    ```
-   cf logs fortuneservice --recent
+   cf logs <YOUR INITIALS>-fortuneservice --recent
    ```
-   
+
 The output should look similar to this:
 
 ```
@@ -248,7 +248,7 @@ The output should look similar to this:
    2017-09-03T19:58:39.25-0400 [APP/PROC/WEB/0] OUT Application started. Press Ctrl+C to shut down.
 ```
 
-Periodically you will see logs that show the Discovery Server ensuring that the application is still available. It reaches out and is asking the Fortune Service application, are you still running? Do you want to Renew your registration with me? If the application instance is running it will respond back and Eureka will keep it in its internal list. 
+Periodically you will see logs that show the Discovery Server ensuring that the application is still available. It reaches out and is asking the Fortune Service application, are you still running? Do you want to Renew your registration with me? If the application instance is running it will respond back and Eureka will keep it in its internal list.
 
 ```
    2017-09-03T19:59:08.86-0400 [APP/PROC/WEB/0] OUT dbug: Steeltoe.Discovery.Eureka.DiscoveryClient[0]
@@ -260,7 +260,7 @@ Periodically you will see logs that show the Discovery Server ensuring that the 
 ### Step 1
 ##### Build the Fortune Teller UI Application
 
-By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry. 
+By this point, you should have cloned (or forked, or downloaded) the [Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples).  Let's prepare the application to deploy to Cloud Foundry.
 
 Change into the correct folder, which is CircuitBreaker/src/AspDotNetCore/FortuneTeller/Fortune-Teller-UI. Notice that we are going down several levels to the Fortune-Teller-UI Folder:
 
@@ -291,26 +291,26 @@ Note that this step might take a bit to complete. Please wait until you see that
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name                  service                       plan       bound apps       last operation
    rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
    rr-HystrixService     p-circuit-breaker-dashboard   standard                    create in progress
    ```
-    
+
 Once this is successful, you will see this:
 
    ```bash
    cf services
    Getting services in org pivotal / space development as admin...
    OK
-    
+
    name                  service                       plan       bound apps       last operation
    rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
    rr-HystrixService     p-circuit-breaker-dashboard   standard                    create succeeded
    ```
 
-You can now proced to the next step. 
-    
+You can now proced to the next step.
+
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
@@ -322,7 +322,7 @@ You can now proced to the next step.
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
-In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders with your initials. Notice this needs the service we created earlier in this lab. 
+In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders with your initials. Notice this needs the service we created earlier in this lab.
 
    ```
    ---
@@ -334,7 +334,7 @@ In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> p
       - <YOUR INITIALS>-DiscoveryService
       - <YOUR INITIALS>-HystrixService
    ```
-    
+
 Be sure to save the file before continuing.
 
 ### Step 6
@@ -345,13 +345,13 @@ Push the Fortune Teller UI
 On Linux/Mac:
 
   ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+  $ cf push <YOUR INITIALS>-fortuneui -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish
   ```
-  
- On Windows: 
-  
+
+ On Windows:
+
   ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+  cf push <YOUR INITIALS>-fortuneui -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
   ```
 
 Which will result in output of
@@ -374,9 +374,9 @@ Once the application is running, you'll notice Steeltoe and Hystrix logs coming 
 Run the following command to view the activity:
 
    ```
-   cf logs fortuneui --recent
+   cf logs <YOUR INITIALS>-fortuneui --recent
    ``
-   
+
 The output should look similar to this:
 
 ```
@@ -402,14 +402,14 @@ Open the application URL in a browser. You will see something similar to this:
 
 You can also tack on multiple at the end of the URL to have it return three Fortunes at once. In my case the full url would be this: [https://fortuneui.app.cloud.rick-ross.com/#/multiple](https://fortuneui.app.cloud.rick-ross.com/#/multiple)
 
-### Step 9 
+### Step 9
 ##### Interact with the Hystrix Dashboard in Pivotal Cloud Foundry
 
 Navigate to your apps manager, navigate to your org and space where your Fortune UI application is running. Click on the Services tab to see the services running:
 
 <img src="/images/fortune-services-in-apps-manager.png" alt="Fortune Services" style="width: 70%;"/>
 
-Click on the Circuit Breaker service and then the Manage link in the upper right. If you are prompted to log in, do so. 
+Click on the Circuit Breaker service and then the Manage link in the upper right. If you are prompted to log in, do so.
 
 <img src="/images/circuit-breaker-dashboard.png" alt="Circuit Breaker Dashboard" style="width: 70%;"/>
 
@@ -426,6 +426,3 @@ For additional information on Steeltoe Circuit Breaker, please see the official 
 [http://steeltoe.io/docs/steeltoe-circuitbreaker/](http://steeltoe.io/docs/steeltoe-circuitbreaker/)
 
 And if you have time, go through the same exercise using the .NET Framework which is located in the CircuitBreaker/src/AspDotNet4/FortuneTeller/ for both the Service and the UI folder. Remember to modify the manifest file to use your configuration service instance name.
-
-
-

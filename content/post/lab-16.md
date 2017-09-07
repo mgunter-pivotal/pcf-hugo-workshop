@@ -34,7 +34,7 @@ In this lab we are going to do a green-blue deployment using cf commands. We'll 
   <img src="/images/blue-green-process.png" alt="Blue Green Deployment Process" style="width: 100%;"/>
 
 
-There are three different options in this lab to do blue-green deployment. We'll walk through the first one and talk about the other optons. 
+There are three different options in this lab to do blue-green deployment. We'll walk through the first one and talk about the other optons.
 
 ##### Option 1
 
@@ -62,13 +62,13 @@ Next, you can push a new version of the app with a green route.
 Cloud Foundry plugin [Autopilot](https://github.com/concourse/autopilot) does blue green deployment, albeit it takes a different approach to other zero-downtime plugins. It does not perform any complex route re-mappings instead it leans on the manifest feature of the Cloud Foundry CLI. The method also has the advantage of treating a manifest as the source of truth and will converge the state of the system towards that. This makes the plugin ideal for continuous delivery environments.
 
 You can download the latest release of the autopilot plugin from the github releases page [here](https://github.com/contraband/autopilot/releases)
- 
-To install the plugin you run the following command from the location that you saved the autoplugin. 
- 
+
+To install the plugin you run the following command from the location that you saved the autoplugin.
+
    ```bash
    cf install-plugin autopilot
    ```
-   
+
 Once the plugin is installed ...
 
    ```bash
@@ -76,7 +76,7 @@ Once the plugin is installed ...
    // Append the build number to the app Name
    $ nano manifest.yml // Change the app name and append the build number, on Windows use wordpad manifest.yml
    ```
-   
+
 The contents of the manifest should look like this
 
    ```bash
@@ -87,7 +87,7 @@ The contents of the manifest should look like this
      stack: windows2012R2
      buildpack: hwc_buildpack
    ```
-   
+
    ```bash
    $ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
    ```
