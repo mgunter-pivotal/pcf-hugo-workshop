@@ -26,29 +26,26 @@ When you vertically scale your application, you are increasing the amount of mem
 Scaling your application horizontally means that you are adding application instances to increase your application throughput and performance under load.
 
 Lets vertically scale the application to 1 GB of RAM.
-
-   ````bash
-   $ cf scale <YOUR INITIALS>-cities-service -m 1G
-   ````
+  ````bash
+  $ cf scale <YOUR INITIALS>-cities-service -m 1G
+  ````
 
 
 ### Step 2
-##### Scale the Application in the Console
+##### Scale the Applicaiton in the Console
 
-Now scale your application down to 700 MB.
+Now scale your application down to 512 MB.
 
 Next, lets scale up your application to 2 instances
-
-   ````bash
-   $ cf scale <YOUR INITIALS>-cities-service -i 2
-   ````
+  ````bash
+  $ cf scale <YOUR INITIALS>-cities-service -i 2
+  ````
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
-
-   ````bash
-   $ cf app <YOUR INITIALS>-cities-service
-   ````
+  ````bash
+  $ cf app <YOUR INITIALS>-cities-service
+  ````
 
 
 Once the second instance as started, scale the app back down to one instance.
@@ -78,59 +75,6 @@ To verify that the application is running, use the following curl commands (or u
   For Windows, use your browser and visit the corresponding URLs.
 
 <br>
-
----
-
-## Using the Autoscaler
-### Step 4 Scaling with Autoscaler
-
-The Autoscaler is a Marketplace Service available to bind to your applications just like any other service. You have the ability to select what criteria causes your applicatton to scale up and down. For the purpose of this lab, we'll scale the application down from 2 instances to 1. 
-
-**Using either the App Manager or the CLI, be sure you have 2 application instances running of your cities-service application. **
-
-### Step 5 - Create & Bind to Autoscaler
-
-Let's bind the Autoscaler Service to the Cities Service application. Navigate to the Marketplace Services.
-
-  <img src="/images/dev-space-services.png" alt="Services"  style="width: 70%; "/>
-
-Select the Autoscaler Service. 
-
-  <img src="/images/auto-scaler-service.png" alt="Auto Scaler" style="width: 70%; "/>
-
-Click the Select this Plan button and enter in a few details
-
-   ```
-   Instance Name: <YOUR INITIALS>-cities-service-as
-   Space: Default should be fine. It needs to match the name of the space where cities-service lives
-   Bind to App: Select your <YOUR INITIALS>-cities-service application
-   ```
-   
-Once the data is entered, click the Add button.    
-
-   <img src="/images/cities-service-create-as.png" alt="Services"  style="width: 70%; "/>
-
-Now click on the App Autoscaler link that is next your newly created service instance. 
-
-   <img src="/images/cities-service-as.png" alt="Autoscaler Details"  style="width: 70%; "/>
-   
-### Step 6 - Configure Autoscaler
-   
-Next, click the Manage link in the upper right. 
-
-<img src="/images/cities-service-as-parms.png" alt="Autoscaler Parameters" style="width: 70%; "/>
-
-Before we can enable the Autoscaler, set the minimum and maximum number of instances. Click the edit button next to the Instances and enter these values:
-
-   ```
-   Minimum: 1
-   Maximum: 3
-   ```
-And save those values. Now, edit the Scaling rules and enter in values of your chosing. For example, change the rule to HTTP Throughput and enter 10 for scaling down and 50 for scaling up. Save these values. Finally, slide the button next to Disabled to enable the service. 
-
-<img src="/images/cities-service-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
-
-Navigate to your application in Apps Manager and watch the number of instances go down to one. Wait a few minutes and refresh your browser to see the change. 
 
 ##### Discussion
 

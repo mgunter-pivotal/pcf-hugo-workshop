@@ -10,7 +10,7 @@ weight = 3
 
 ### Goal
 
-To take a previously deployed microservice and demonstrate how to view logging and metrics.
+To take a previously deployed microservice and demonstrate how to bind it to backing services.
 
 <!--more-->
 
