@@ -1,9 +1,9 @@
 +++
-Categories = ["registration","workshop"]
-Tags = ["registration"]
+Categories = ["oldregistration","workshop"]
+Tags = ["oldregistration"]
 date = "2016-03-15T16:23:23+09:00"
-title = "Registration"
-type = "Registration"
+title = "Old Registration"
+type = "OldRegistration"
 weight = 1
 +++
 

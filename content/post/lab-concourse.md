@@ -1,9 +1,9 @@
 +++
 Categories = ["lab"]
-Tags = ["concourse","cloudfoundry"]
-date = "2016-03-15T14:54:22-04:00"
-title = "Lab : Build Pipelines using Concourse.ci"
-weight = 3
+Tags = ["concourse", "pipeline"]
+date = "2017-08-29T12:08:22-04:00"
+title = "Lab: Build Pipelines using Concourse.ci"
+weight = 10
 +++
 
 
@@ -64,7 +64,7 @@ Learn how to
 
 The Concourse Server in AWS is already configured from an existing AMI for this workshop.
 
-   Open a browser window and launch ***https://52.54.77.21***
+   Open a browser window and launch ***https://ci.rick-ross.com/***
 
    The userid/password for this server is
    ```
@@ -84,7 +84,7 @@ Open a cmd/terminal and target the concourse server.
 
 We will call our Concourse CI Server as *```aws```*
 
-    $ fly -t aws login -c https://52.54.77.21 -k
+    $ fly -t aws login -c https://ci.rick-ross.com -k
 
     Use the same userid / password combination.
 
@@ -120,7 +120,7 @@ Be sure to point to the correct github-uri. The simplest uri to use is the same 
 ````
 github-uri: https://github.com/rjain-pivotal/flight-school.git
 github-branch: master
-cf-api: https://api.run.haas-88.pez.pivotal.io
+cf-api: https://api.sys.cloud.rick-ross.com
 cf-username: <studentXXX>
 cf-password: <password>
 cf-org: <studentXXX>-org
@@ -277,7 +277,7 @@ $ fly -t aws destroy-pipeline -p studentXXX-flight-school // This will DELETE th
     s3-bucket-release-candidates: studentXXX-pcfdemo-release-candidates
     maven-opts: # -Xms256m -Xmx512m
     maven-config: # -s path/to/settings.xml
-    cf-api: https://api.run.haas-68.pez.pivotal.io
+    cf-api: https://api.sys.cloud.rick-ross.com
     cf-username: studentXXX
     cf-password: studentXXX-password
     cf-org: studentXXX-org
@@ -334,7 +334,7 @@ $ fly -t aws destroy-pipeline -p studentXXX-flight-school // This will DELETE th
     cf apps // Get the App Names and URL
     ````
 
-    Open a browser and check the app load. (https://studentXXX-pcfdemo-ci.run.haas-68.pez.pivotal.io)
+    Open a browser and check the app load. (https://studentXXX-pcfdemo-ci.sys.cloud.rick-ross.com)
 
     <img src="/images/concourse-10.png" alt="Concourse CI" style="width: 100%;"/>
 

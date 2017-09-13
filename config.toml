@@ -1,4 +1,4 @@
-baseurl = "http://pcf-detroit-workshop.cfapps.io/"
+baseurl = "http://pcf-solera-workshop.app.cloud.rick-ross.com"
 languageCode = "en-us"
 title = "Cloud Foundry Workshop"
 
@@ -8,8 +8,8 @@ title = "Cloud Foundry Workshop"
 theme="material-design"
 MetaDataFormat = "toml"
 paginate = 9 # To specify a multiple of 3
-disqusShortname = "rjain15" # optional
-copyright = "© Copyright 2016 Pivotal Software, Inc. All Rights Reserved."
+disqusShortname = "" # optional
+copyright = "© Copyright 2017 Pivotal Software, Inc. All Rights Reserved."
 
 #
 # All parameters below here are optional and can be mixed and matched.
@@ -19,6 +19,7 @@ copyright = "© Copyright 2016 Pivotal Software, Inc. All Rights Reserved."
     brand = "Pivotal"
     topline = "Do the right thing"
     footline = "code with <i class='fa fa-heart'></i>"
+    tags = ["spring"]
 
     # Sidebar position
     # false, true, "left", "right"
@@ -27,13 +28,12 @@ copyright = "© Copyright 2016 Pivotal Software, Inc. All Rights Reserved."
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "Home"
-
-    description = "Detroit · 15 Nov · 8:00AM - 4:00PM" # optional
+    description = "Solera · September 6 & 7 9:00 AM - 4:00 PM" # optional
     twitter = "pivotal" # optional
-    customer = "detroit"
+    customer = "solera"
     # headerCover = "images/headerCover.png" # optional
     # footerCover = "images/footerCover.png" # optional
-    googleAnalyticsUserID = "UA-75133856-1" # optional
+    googleAnalyticsUserID = "" # optional
 
 [permalinks]
   post = "/:year/:month/:day/:title/" # optional

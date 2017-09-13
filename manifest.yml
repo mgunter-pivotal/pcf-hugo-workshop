@@ -1,11 +1,8 @@
 ---
 applications:
-- name: pcf-hugo-workshop
+- name: pcf-solera-workshop
   memory: 64M
   instances: 1
-  host: pcf-hugo-workshop
-  domain: cfapps.io
+  domain: app.cloud.rick-ross.com 
   path: public
   buildpack: staticfile_buildpack
-
-
