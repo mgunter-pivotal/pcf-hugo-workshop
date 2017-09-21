@@ -32,7 +32,7 @@ $ cf scale <YOUR INITIALS>-cities-service -m 1G
 ```
 
 ### Step 2
-##### Scale the Applicaiton in the Console
+##### Scale the Application in the Console
 
 Now scale your application down to 512 MB.
 
@@ -40,8 +40,7 @@ Next, lets scale up your application to 2 instances
 
 ```bash
 $ cf scale <YOUR INITIALS>-cities-service -i 2
-````
-
+```
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
 
