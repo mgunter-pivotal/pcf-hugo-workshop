@@ -26,18 +26,18 @@ When you want to see the logs as you interact with your microservice, you can us
 
 Run the following command and then open up the cities-service endpoint in a browser and watch the logs
 
-    ````bash
-    $ cf logs <YOUR INITIALS>-cities-service
-    ````
+````bash
+$ cf logs <YOUR INITIALS>-cities-service
+````
 
 ### Step 2
 ##### Viewing Recent Logs from the Command Line
 
 When you want to view logs that have already occured, use the cf logs command with the --recent option. Run the command below and see what happens.
 
-    ````bash
-    $ cf logs <YOUR INITIALS>-cities-service --recent
-    ````
+````bash
+$ cf logs <YOUR INITIALS>-cities-service --recent
+````
 
 Please note that there is an internal limit on how far back the logs go back. This command is meant to retrieve logs that have just recently occurred. We'll talk about other alternatives a bit later.
 

@@ -20,6 +20,18 @@ Prerequisites
 1. Install .NET Core 2.0
 
     [.NET Core](https://www.microsoft.com/net/core)
+    
+    To validate the installation, run the following command from a command prompt or shell:
+
+    ```bash
+    dotnet  --version
+    dotnet new console -o newapp
+    cd newapp
+    dotnet run
+    ```    
+    
+    If successful, you should see a Hello World! in the output. 
+
 
 2. Clone or Download the Steeltoe Samples
 
@@ -85,22 +97,21 @@ Change into the correct folder, which is Configuration/src/AspDotNetCore/SimpleC
 
 Linux/Mac:
 
-   ```bash
-   cd Configuration/src/AspDotNetCore/SimpleCloudFoundry
-   ```
+```bash
+cd Configuration/src/AspDotNetCore/SimpleCloudFoundry
+```
 
 Windows:
 
-   ```
-   cd Configuration\src\AspDotNetCore\SimpleCloudFoundry
-   ```
+```
+cd Configuration\src\AspDotNetCore\SimpleCloudFoundry
+```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
 Each participant will have their own user ids and passwords.  
 
-  ````
   cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
   Email: myuserid
   Password: ••••••••
@@ -112,8 +123,6 @@ Each participant will have their own user ids and passwords.
 
   Select any one and stick to that space for the rest of the workshop.
 
-   ````
-
 Login to the App Console at https://app.cloud.rick-ross.com
 
    <img src="/images/pcf-console.png" alt="PCF App Console" style="width: 70%;"/>
@@ -123,56 +132,56 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Let's create a config server that the application will use to get configuration information from:
 
-   ```
-   cf create-service p-config-server standard <YOUR INITIALS>-ConfigServer -c ./config-server.json
-   ```
+```
+cf create-service p-config-server standard <YOUR INITIALS>-ConfigServer -c ./config-server.json
+```
 
 Note that this step might take a bit to complete. Please wait until you see that the last operation resulted is "create succeeded". To do that:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name              service           plan       bound apps   last operation
-   rr-ConfigServer   p-config-server   standard                create in progress
-   ```
+name              service           plan       bound apps   last operation
+rr-ConfigServer   p-config-server   standard                create in progress
+```
     
 Once this is successful, you will see this:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name              service           plan       bound apps   last operation
-   rr-ConfigServer   p-config-server   standard                create succeeded
-   ```
+name              service           plan       bound apps   last operation
+rr-ConfigServer   p-config-server   standard                create succeeded
+```
 
 You can now proced to the next step. 
     
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
-   ```bash
-   dotnet restore --configfile nuget.config
-   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-   ```
+```bash
+dotnet restore --configfile nuget.config
+dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+```
 
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
 In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholder with your initials.
 
-   ```
-   ---
-   applications:
-   - name: foo
-     env:
-       ASPNETCORE_ENVIRONMENT: development
-     services:
-      - <YOUR INITIALS>-ConfigServer 
-   ```
+```
+---
+applications:
+- name: foo
+  env:
+    ASPNETCORE_ENVIRONMENT: development
+  services:
+  - <YOUR INITIALS>-ConfigServer 
+```
     
 Be sure to save the file before continuing.
 
@@ -183,28 +192,28 @@ Push the Fortune Teller Service
 
 On Linux/Mac:
 
-  ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
-  ```
+```bash
+$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+```
   
- On Windows: 
+On Windows: 
   
-  ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
-  ```
+```bash
+cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+```
 
 Which will result in output of
 
-   ```bash
-   // This will give an output which is similar to this
-   requested state: started
-   instances: 1/1
-   usage: 1G x 1 instances
-   urls: rr-configapp.app.cloud.rick-ross.com
-   last uploaded: Sun Sep 3 21:16:55 UTC 2017
-   stack: cflinuxfs2
-   buildpack: ASP.NET Core (buildpack-1.0.25)
-   ```
+```bash
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: rr-configapp.app.cloud.rick-ross.com
+last uploaded: Sun Sep 3 21:16:55 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
 
 ### Step 7
 ##### View the application in a Browser

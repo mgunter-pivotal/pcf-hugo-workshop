@@ -24,6 +24,17 @@ Prerequisites
 1. Install .NET Core 2.0
 
     [.NET Core](https://www.microsoft.com/net/core)
+    
+    To validate the installation, run the following command from a command prompt or shell:
+
+    ```bash
+    dotnet  --version
+    dotnet new console -o newapp
+    cd newapp
+    dotnet run
+    ```    
+    
+    If successful, you should see a Hello World! in the output. 
 
 2. Clone or Download the Steeltoe Samples
 

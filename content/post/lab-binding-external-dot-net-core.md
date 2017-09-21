@@ -21,6 +21,17 @@ Prerequisites
 
     [.NET Core](https://www.microsoft.com/net/core)
     
+    To validate the installation, run the following command from a command prompt or shell:
+
+    ```bash
+    dotnet  --version
+    dotnet new console -o newapp
+    cd newapp
+    dotnet run
+    ```    
+    
+    If successful, you should see a Hello World! in the output. 
+    
 2. Clone or Download the Steeltoe Samples
 
 	[Steeltoe Samples:  https://github.com/rossr3-pivotal/Samples](https://github.com/rossr3-pivotal/Samples)
@@ -34,7 +45,8 @@ Prerequisites
 	```bash
 	unzip Samples-master.zip
 	```
-	##### ---OR---
+	
+    ##### ---OR---
 
 	Fork and Clone
 
@@ -85,15 +97,15 @@ Change into the correct folder, which is BareMicroservices/src/AspDotNetCore/For
 
 Linux/Mac:
 
-   ```bash
-   cd BareMicroservices/src/AspDotNetCore/Fortune-Teller-Service/
-   ```
+```bash
+cd BareMicroservices/src/AspDotNetCore/Fortune-Teller-Service/
+```
 
 Windows:
 
-   ```
-   cd BareMicroservices\src\AspDotNetCore\Fortune-Teller-Service
-   ```
+```
+cd BareMicroservices\src\AspDotNetCore\Fortune-Teller-Service
+```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
@@ -121,10 +133,10 @@ Login to the App Console at https://app.cloud.rick-ross.com
 ### Step 3
 #### Prepare the .NET Core application for deployment
 
-   ```bash
-   dotnet restore --configfile nuget.config
-   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-   ```
+```bash
+dotnet restore --configfile nuget.config
+dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+```
 
 ### Step 4
 ##### Push the app
@@ -133,28 +145,28 @@ Push the Fortune Teller Service
 
 On Linux/Mac:
 
-  ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
-  ```
+```bash
+$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+```
   
  On Windows: 
   
-  ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
-  ```
+```bash
+cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+```
 
 Which will result in output of
 
-   ```bash
-   // This will give an output which is similar to this
-   requested state: started
-   instances: 1/1
-   usage: 1G x 1 instances
-   urls: fortuneservice.app.cloud.rick-ross.com
-   last uploaded: Tue Sep 5 23:38:58 UTC 2017
-   stack: cflinuxfs2
-   buildpack: ASP.NET Core (buildpack-1.0.25)
-   ```
+```bash
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: fortuneservice.app.cloud.rick-ross.com
+last uploaded: Tue Sep 5 23:38:58 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
 
 ### Step 5
 ##### Visit the Applicaiton in the Browser
@@ -175,26 +187,26 @@ Change into the correct folder, which is BareMicroservices/src/AspDotNetCore/For
 
 Linux/Mac:
 
-   ```bash
-   cd ../Fortune-Teller-UI
-   ```
+```bash
+cd ../Fortune-Teller-UI
+```
 
 Windows:
 
-   ```
-   cd ../Fortune-Teller-UI
-   ```
+```
+cd ../Fortune-Teller-UI
+```
 
 ### Step 2
 ##### Create a User Provided Service in Pivotal Cloud Foundry
 
 Let's create a User Provided Service that will point to our Fortune Teller Service application that we just deployed. 
 
-   ```
-   cf create-user-provided-service <YOUR INITIALS>-FortuneService -p "uri"
+```
+cf create-user-provided-service <YOUR INITIALS>-FortuneService -p "uri"
    
-   uri>
-   ```
+uri>
+```
 
 When prompted to enter the uri, enter in your URL of where your application lives. In my case, it is located here: http://fortuneservice.app.cloud.rick-ross.com/
 
@@ -203,25 +215,25 @@ If you want to double check your work, bring up Apps Manager, navigate to your o
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
-   ```bash
-   dotnet restore --configfile nuget.config
-   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-   ```
+```bash
+dotnet restore --configfile nuget.config
+dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+```
 
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
 In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders with your initials. Notice this needs the service we created earlier in this lab. 
 
-   ```
-   ---
-   applications:
-  - name: fortuneui
-    env:
-      ASPNETCORE_ENVIRONMENT: Production
-    services:
-      - <YOUR INITIALS>-FortuneService
-   ```
+```
+---
+applications:
+- name: fortuneui
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+  services:
+    - <YOUR INITIALS>-FortuneService
+```
     
 Be sure to save the file before continuing.
 
@@ -232,28 +244,28 @@ Push the Fortune Teller UI
 
 On Linux/Mac:
 
-  ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
-  ```
+```bash
+$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+```
   
  On Windows: 
   
-  ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
-  ```
+```bash
+cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+```
 
 Which will result in output of
 
-   ```bash
-   // This will give an output which is similar to this
-   requested state: started
-   instances: 1/1
-   usage: 1G x 1 instances
-   urls: fortuneui.app.cloud.rick-ross.com
-   last uploaded: Mon Sep 4 00:21:40 UTC 2017
-   stack: cflinuxfs2
-   buildpack: ASP.NET Core (buildpack-1.0.25)
-   ```
+```bash
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: fortuneui.app.cloud.rick-ross.com
+last uploaded: Mon Sep 4 00:21:40 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
 
 ### Step 7
 ##### Visit the Fortune UI application in a Browser
@@ -261,7 +273,3 @@ Which will result in output of
 Open the application URL in a browser. You will see something similar to this:
 
 <img src="/images/plain-fortune-ui.png" alt="Fortune UI" style="width: 70%;"/>
-
-
-
-

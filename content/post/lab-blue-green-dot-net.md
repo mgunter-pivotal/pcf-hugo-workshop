@@ -65,54 +65,52 @@ You can download the latest release of the autopilot plugin from the github rele
  
 To install the plugin you run the following command from the location that you saved the autoplugin. 
  
-   ```bash
-   cf install-plugin autopilot
-   ```
+```bash
+cf install-plugin autopilot
+```
    
 Once the plugin is installed ...
 
-   ```bash
-   $ cd pcf-dotnet-environment-viewer/ViewEnvironment
-   // Append the build number to the app Name
-   $ nano manifest.yml // Change the app name and append the build number, on Windows use wordpad manifest.yml
-   ```
+```bash
+$ cd pcf-dotnet-environment-viewer/ViewEnvironment
+// Append the build number to the app Name
+$ nano manifest.yml // Change the app name and append the build number, on Windows use wordpad manifest.yml
+```
    
 The contents of the manifest should look like this
 
-   ```bash
-   ---
-   applications:
-   - name: <YOUR INITIALS>-env-b100
-     memory: 512m
-     stack: windows2012R2
-     buildpack: hwc_buildpack
-   ```
+```bash
+---
+applications:
+- name: <YOUR INITIALS>-env-b100
+  memory: 512m
+  stack: windows2012R2
+  buildpack: hwc_buildpack
+```
    
-   ```bash
-   $ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
-   ```
+```bash
+$ cf zero-downtime-push <YOUR INITIALS>-cities-hello -f manifest.hello
+```
 
 ##### Option 3 (This is as bash script and works only on Linux/OSX)
 
 If you would like to inject build numbers in your app names here is a script you could use to do blue green deployments in the cities-hello directory which only works on a Mac
 
-   ```bash
-    Usage: blue-green.sh <app-name> <build-number> <domain>
-   ```
+```bash
+Usage: blue-green.sh <app-name> <build-number> <domain>
+```
 
-  ````bash
-
-  $ ./blue-green.sh  <YOUR INTIALS>-env 1001 <YOUR INITIALS>
-  $ cf apps // You should see your app build 1001 and the Route
-  ````
+```bash
+$ ./blue-green.sh  <YOUR INTIALS>-env 1001 <YOUR INITIALS>
+$ cf apps // You should see your app build 1001 and the Route
+```
 
   Now push the new build 1002 of the app
 
-  ````bash
-  $ ./blue-green.sh  <YOUR INITIALS>-cities-hello 1002 example.com
-  $ cf apps // You should see your app build 1002 and the same route mapped to the new build
-
-  ````
+```bash
+$ ./blue-green.sh  <YOUR INITIALS>-cities-hello 1002 example.com
+$ cf apps // You should see your app build 1002 and the same route mapped to the new build
+```
 
 ##### Discussion
 

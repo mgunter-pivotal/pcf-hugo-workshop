@@ -45,16 +45,16 @@ In this section we will create a backend microservice end point for cities-servi
 
 3. You will need to specify the parameter citiesuri to the user defined service instance .
 
-  ````bash
-  // Use the interactive prompt to create user defined service
-  // It will prompt you for the parameters
+```bash
+// Use the interactive prompt to create user defined service
+// It will prompt you for the parameters
 
-  $ cf create-user-provided-service <YOUR INITIALS>-cities-ws -p "citiesuri"
+$ cf create-user-provided-service <YOUR INITIALS>-cities-ws -p "citiesuri"
 
-  citiesuri>   http://<YOUR INIITALS>-cities-service.app.cloud.rick-ross.com/
+citiesuri>   http://<YOUR INIITALS>-cities-service.app.cloud.rick-ross.com/
 
-  Creating user provided service....
-  ````
+Creating user provided service....
+```
 
 <br>
 ### Step 3
@@ -64,25 +64,26 @@ In this section we will create a backend microservice end point for cities-servi
 A `manifest.yml` is included in the cities-ui app.  Edit this manifest with your student number and add the service binding to your cities-service
 
 
-  ````bash
-  $ cd cities-ui
-  $ nano manifest.yml (Or your favorite editor) (on Windows use wordpad manifest.yml)
+```bash
+$ cd cities-ui
+$ nano manifest.yml (Or your favorite editor) (on Windows use wordpad manifest.yml)
 
-  ---
-  applications:
-  - name: <YOUR INITIALS>-cities-ui
-    memory: 512M
-    instances: 1
-    path: build/libs/cities-ui.jar
-    services: [ <YOUR INITIALS>-cities-ws ]
-    env:
-      SPRING_PROFILES_ACTIVE: cloud
-  ````
+---
+applications:
+- name: <YOUR INITIALS>-cities-ui
+  memory: 512M
+  instances: 1
+  path: build/libs/cities-ui.jar
+  services: [ <YOUR INITIALS>-cities-ws ]
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+```
 
 Push the `cities-ui` without specifying the manifest.yml. It will by default pick the manifest.yml file and deploy the app.
-  ````bash
-  $ cf push
-  ````
+
+```bash
+$ cf push
+```
 
 Note the URL once the application has been successfully pushed.
 
@@ -90,7 +91,7 @@ Note the URL once the application has been successfully pushed.
 ##### Verify the backend service is bound to cities-ui
 
 
-````bash
+```bash
 ----
 $ cf env <YOUR INIITALS>-cities-ui
 
@@ -137,7 +138,7 @@ System-Provided:
 
 User-Provided:
 SPRING_PROFILES_ACTIVE: cloud
-````
+```
 
 ### Step 5
 ##### Access the cities-ui to verify it is connected to your microservice.

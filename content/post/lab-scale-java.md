@@ -26,10 +26,10 @@ When you vertically scale your application, you are increasing the amount of mem
 Scaling your application horizontally means that you are adding application instances to increase your application throughput and performance under load.
 
 Lets vertically scale the application to 1 GB of RAM.
-  ````bash
-  $ cf scale <YOUR INITIALS>-cities-service -m 1G
-  ````
 
+```bash
+$ cf scale <YOUR INITIALS>-cities-service -m 1G
+```
 
 ### Step 2
 ##### Scale the Applicaiton in the Console
@@ -37,15 +37,17 @@ Lets vertically scale the application to 1 GB of RAM.
 Now scale your application down to 512 MB.
 
 Next, lets scale up your application to 2 instances
-  ````bash
-  $ cf scale <YOUR INITIALS>-cities-service -i 2
-  ````
+
+```bash
+$ cf scale <YOUR INITIALS>-cities-service -i 2
+````
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
-  ````bash
-  $ cf app <YOUR INITIALS>-cities-service
-  ````
+
+```bash
+$ cf app <YOUR INITIALS>-cities-service
+```
 
 
 Once the second instance as started, scale the app back down to one instance.
@@ -60,17 +62,17 @@ You can also use the Autoscaler service from the marketplace and bind it to your
 
 To verify that the application is running, use the following curl commands (or use your browser) to retrieve data from the service or use a browser to access the URL:
 
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities
-  ````
+```bash
+$ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities
+```
 
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities/49
-  ````
+```bash
+$ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities/49
+```
 
-  ````bash
-  $ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities?size=5
-  ````
+```bash
+$ curl -i -k https://<YOUR INITIALS>-cities-service.app.cloud.rick-ross.com/cities?size=5
+```
 
   For Windows, use your browser and visit the corresponding URLs.
 

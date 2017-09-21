@@ -27,10 +27,9 @@ Scaling your application horizontally means that you are adding application inst
 
 Lets vertically scale the application to 1 GB of RAM.
 
-   ````bash
-   $ cf scale <YOUR INITIALS>-env -m 1G
-   ````
-
+```bash
+$ cf scale <YOUR INITIALS>-env -m 1G
+```
 
 ### Step 2
 ##### Scale the Application in the Console
@@ -39,17 +38,16 @@ Now scale your application down to 700 MB.
 
 Next, lets scale up your application to 2 instances
 
-   ````bash
-   $ cf scale <YOUR INITIALS>-env -i 2
-   ````
+```bash
+$ cf scale <YOUR INITIALS>-env -i 2
+```
 
 
 To check the status of your applications you can check from the command line to see how many instances your app is running and their current state
 
-   ````bash
-   $ cf app <YOUR INITIALS>-env
-   ````
-
+```bash
+$ cf app <YOUR INITIALS>-env
+```
 
 Once the second instance as started, scale the app back down to one instance.
 
@@ -87,11 +85,11 @@ Select the Autoscaler Service.
 
 Click the Select this Plan button and enter in a few details
 
-   ```
-   Instance Name: <YOUR INITIALS>-env-as
-   Space: Default should be fine. It needs to match the name of the space where cities-service lives
-   Bind to App: Select your <YOUR INITIALS>-env application
-   ```
+```
+Instance Name: <YOUR INITIALS>-env-as
+Space: Default should be fine. It needs to match the name of the space where cities-service lives
+Bind to App: Select your <YOUR INITIALS>-env application
+```
    
 Once the data is entered, click the Add button.    
 
@@ -109,10 +107,11 @@ Next, click the Manage link in the upper right.
 
 Before we can enable the Autoscaler, set the minimum and maximum number of instances. Click the edit button next to the Instances and enter these values:
 
-   ```
-   Minimum: 1
-   Maximum: 3
-   ```
+```
+Minimum: 1
+Maximum: 3
+```
+   
 And save those values. Now, edit the Scaling rules and enter in values of your chosing. For example, change the rule to HTTP Throughput and enter 10 for scaling down and 50 for scaling up. Save these values. Finally, slide the button next to Disabled to enable the service. 
 
 <img src="/images/env-as-enbled.png" alt="Autoscaler Enabled" style="width: 70%; "/>
