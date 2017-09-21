@@ -52,35 +52,35 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
           
     To verify that you have installed it properly, run the following command from a command prompt or shell:
           
-```bash
-javac -version
-```
+    ```bash
+    javac -version
+    ```
 
 2. Git CLI for [Windows](https://github.com/git-for-windows/git/releases/download/v2.9.0.windows.1/Git-2.9.0-64-bit.exe)
    or Git from [github.com](https://desktop.github.com)
 
     If you have installed the Git command line, you can validate the installation by running the following command:
         
-```bash
-git --version
-```
+    ```bash
+    git --version
+    ```
 
 3. Cloud Foundry CLI for [Mac](https://github.com/cloudfoundry/cli/releases) or [Windows](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html#windows)
 4. 
     To validate the installation, run the following command from a command prompt or shell:
 
-```bash
-cf --version
-```
+   ```bash
+   cf --version
+   ```
 
 4. Curl for [Windows](http://winampplugins.co.uk/curl/)
    Or for [Mac] (http://pdb.finkproject.org/pdb/package.php/curl)
 
     To validate the installation, run the following command from a command prompt or shell:
         
-```bash
-curl --version
-```
+   ```bash
+   curl --version
+   ```
 
 5. An account on your PCF Environment
 
