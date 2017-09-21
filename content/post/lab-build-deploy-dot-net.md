@@ -127,15 +127,15 @@ Change into the correct folder. Notice that we are going down two levels to the 
 
 Linux/Mac:
 
-  ```bash
-  cd pcf-dotnet-environment-viewer/ViewEnvironment
-  ```
+    ```bash
+    cd pcf-dotnet-environment-viewer/ViewEnvironment
+    ```
 
 Windows:
 
-  ```
-  cd pcf-dotnet-environment-viewer\ViewEnvironment
-  ```
+    ```
+    cd pcf-dotnet-environment-viewer\ViewEnvironment
+    ```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
