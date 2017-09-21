@@ -100,34 +100,34 @@ Change into the correct folder, which is CircuitBreaker/src/AspDotNetCore/Fortun
 
 Linux/Mac:
 
-   ```bash
-   cd CircuitBreaker/src/AspDotNetCore/FortuneTeller/Fortune-Teller-Service
-   ```
+```bash
+cd CircuitBreaker/src/AspDotNetCore/FortuneTeller/Fortune-Teller-Service
+```
 
 Windows:
 
-   ```
-   cd Configuration\src\AspDotNetCore\FortuneTeller/Fortune-Teller-Service
-   ```
+```
+cd Configuration\src\AspDotNetCore\FortuneTeller/Fortune-Teller-Service
+```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
 Each participant will have their own user ids and passwords.  
 
-  ````
-  cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-  Email: myuserid
-  Password: ••••••••
+```
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+Email: myuserid
+Password: ••••••••
 
-  Select a space (or press enter to skip):
-  1. development
-  2. test
-  3. production
+Select a space (or press enter to skip):
+1. development
+2. test
+3. production
 
-  Select any one and stick to that space for the rest of the workshop.
+Select any one and stick to that space for the rest of the workshop.
 
-   ````
+```
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
@@ -138,58 +138,58 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Let's create a config server that the application will use to get configuration information from:
 
-   ```
-   cf create-service p-service-registry standard <YOUR INITIALS>-DiscoveryService
-   ```
+```
+cf create-service p-service-registry standard <YOUR INITIALS>-DiscoveryService
+```
 
 Note that this step might take a bit to complete. Please wait until you see that the last operation resulted is "create succeeded". To do that:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name                  service              plan       bound apps   last operation
-   rr-DiscoveryService   p-service-registry   standard                create in progress
-   ```
+name                  service              plan       bound apps   last operation
+rr-DiscoveryService   p-service-registry   standard                create in progress
+```
     
 Once this is successful, you will see this:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name                  service              plan       bound apps   last operation
-   rr-DiscoveryService   p-service-registry   standard                create succeeded
-   ```
+name                  service              plan       bound apps   last operation
+rr-DiscoveryService   p-service-registry   standard                create succeeded
+```
 
 You can now proced to the next step. 
     
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
-   ```bash
-   dotnet restore --configfile nuget.config
-   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-   ```
+```bash
+dotnet restore --configfile nuget.config
+dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+```
 
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
 In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholder with your initials.
 
-   ```
-   ---
-   applications:
-   - name: fortuneService
-     # Uncomment to use C2C networking with SSL connections
-     # command: ./Fortune-Teller-Service --server.urls "https://0.0.0.0:$PORT"
-     env:
-       ASPNETCORE_ENVIRONMENT: Development 
-     services:
-      - <YOUR INITIALS>-DiscoveryService
-   ```
+```
+---
+applications:
+- name: fortuneService
+# Uncomment to use C2C networking with SSL connections
+# command: ./Fortune-Teller-Service --server.urls "https://0.0.0.0:$PORT"
+  env:
+    ASPNETCORE_ENVIRONMENT: Development 
+  services:
+  - <YOUR INITIALS>-DiscoveryService
+```
    
 Be sure to save the file before continuing.
 
@@ -198,30 +198,30 @@ Be sure to save the file before continuing.
 
 Push the Fortune Service 
 
-On Linux/Mac:
+  On Linux/Mac:
 
-  ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
-  ```
+```bash
+$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+```
   
- On Windows: 
+  On Windows: 
   
-  ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
-  ```
+```bash
+cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+```
 
 Which will result in output of
 
-   ```bash
-   // This will give an output which is similar to this
-   requested state: started
-   instances: 1/1
-   usage: 1G x 1 instances
-   urls: fortuneservice.app.cloud.rick-ross.com
-   last uploaded: Sun Sep 3 23:58:01 UTC 2017
-   stack: cflinuxfs2
-   buildpack: ASP.NET Core (buildpack-1.0.25)
-   ```
+```bash
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: fortuneservice.app.cloud.rick-ross.com
+last uploaded: Sun Sep 3 23:58:01 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
 
 ### Step 7
 ##### Look at the Logs for Steeltoe / Eureka events
@@ -230,9 +230,9 @@ Once the application is running, you'll notice Steeltoe and Eurkea logs coming t
 
 Run the following command to view the activity:
 
-   ```
-   cf logs fortuneservice --recent
-   ```
+```
+cf logs fortuneservice --recent
+```
    
 The output should look similar to this:
 
@@ -277,74 +277,74 @@ Change into the correct folder, which is CircuitBreaker/src/AspDotNetCore/Fortun
 
 Linux/Mac:
 
-   ```bash
-   cd ../Fortune-Teller-UI
-   ```
+```bash
+cd ../Fortune-Teller-UI
+```
 
 Windows:
 
-   ```
-   cd ../Fortune-Teller-UI
-   ```
+```
+cd ../Fortune-Teller-UI
+```
 
 ### Step 2
 ##### Create a Circuit Breaker Dashboard Service within Pivotal Cloud Foundry
 
 Let's create a Circuit Breakder Dashboard for the application:
 
-   ```
-   cf create-service p-circuit-breaker-dashboard standard <YOUR INITIALS>-HystrixService
-   ```
+```
+cf create-service p-circuit-breaker-dashboard standard <YOUR INITIALS>-HystrixService
+```
 
 Note that this step might take a bit to complete. Please wait until you see that the last operation resulted is "create succeeded". To do that:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name                  service                       plan       bound apps       last operation
-   rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
-   rr-HystrixService     p-circuit-breaker-dashboard   standard                    create in progress
-   ```
+name                  service                       plan       bound apps       last operation
+rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
+rr-HystrixService     p-circuit-breaker-dashboard   standard                    create in progress
+```
     
 Once this is successful, you will see this:
 
-   ```bash
-   cf services
-   Getting services in org pivotal / space development as admin...
-   OK
+```bash
+cf services
+Getting services in org pivotal / space development as admin...
+OK
     
-   name                  service                       plan       bound apps       last operation
-   rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
-   rr-HystrixService     p-circuit-breaker-dashboard   standard                    create succeeded
-   ```
+name                  service                       plan       bound apps       last operation
+rr-DiscoveryService   p-service-registry            standard   fortuneService   create succeeded
+rr-HystrixService     p-circuit-breaker-dashboard   standard                    create succeeded
+```
 
 You can now proced to the next step. 
     
 ### Step 4
 #### Prepare the .NET Core application for deployment
 
-   ```bash
-   dotnet restore --configfile nuget.config
-   dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-   ```
+```bash
+dotnet restore --configfile nuget.config
+dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+```
 
 ### Step 5
 ##### Modify the Manifest to Match the Name of Your Service
 
 In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> placeholders with your initials. Notice this needs the service we created earlier in this lab. 
 
-   ```
-   ---
-   applications:
-  - name: fortuneui
-    env:
-      ASPNETCORE_ENVIRONMENT: Production
-    services:
-      - <YOUR INITIALS>-DiscoveryService
-      - <YOUR INITIALS>-HystrixService
-   ```
+```
+---
+applications:
+- name: fortuneui
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+  services:
+    - <YOUR INITIALS>-DiscoveryService
+    - <YOUR INITIALS>-HystrixService
+```
     
 Be sure to save the file before continuing.
 
@@ -355,28 +355,29 @@ Push the Fortune Teller UI
 
 On Linux/Mac:
 
-  ```bash
-  $ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
-  ```
+```bash
+$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+```
   
  On Windows: 
   
-  ```bash
-  cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
-  ```
+```bash
+cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+```
 
 Which will result in output of
 
-   ```bash
-   // This will give an output which is similar to this
-   requested state: started
-   instances: 1/1
-   usage: 1G x 1 instances
-   urls: fortuneui.app.cloud.rick-ross.com
-   last uploaded: Mon Sep 4 00:21:40 UTC 2017
-   stack: cflinuxfs2
-   buildpack: ASP.NET Core (buildpack-1.0.25)
-   ```
+```
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: fortuneui.app.cloud.rick-ross.com
+last uploaded: Mon Sep 4 00:21:40 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
+
 ### Step 7
 ##### Look at the Logs
 
@@ -384,9 +385,9 @@ Once the application is running, you'll notice Steeltoe and Hystrix logs coming 
 
 Run the following command to view the activity:
 
-   ```
-   cf logs fortuneui --recent
-   ``
+```
+cf logs fortuneui --recent
+```
    
 The output should look similar to this:
 

@@ -69,9 +69,9 @@ Clone the git repo which has a simple boilerplate Spring boot app built using Sp
 
 The Spring Labs repo contains multiple apps, we are going to focus on greeting-config app in this exercise.
 
-````
+```
 git clone https://github.com/rjain-pivotal/pcf-workshop-spring-labs.git
-````
+```
 
 
 ### Step 2
@@ -80,11 +80,11 @@ git clone https://github.com/rjain-pivotal/pcf-workshop-spring-labs.git
 The participants have userId's and the passwords will be distributed prior to the workshop.
 
 
-    ````
-    cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-    Email: UserID
-    Password: ••••••••
-    ````
+```
+cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+Email: UserID
+Password: ••••••••
+```
 
 Login to the App Console at https://apps.sys.cloud.rick-ross.com
 
@@ -104,10 +104,10 @@ You can make changes to the application config files in the forked repo at http:
 
 In case you want to make local changes and commit to the repo, then clone the git repo which has the config properties which are read by the greeting-config
 
-````bash
+```bash
 $git clone https://github.com/your-github-account/workshop-app-config.git
 $cd workshop-app-config/
-````
+```
 
 In this repo you have the following config files:
 
@@ -115,18 +115,19 @@ In this repo you have the following config files:
 
 The config server serves the configuration request using the following path formats, where the application name is set in the application.yml for the client application, profile and label are set as environment variables.
 
-````
+```
 /{application}/{profile}[/{label}]
 /{application}-{profile}.yml
 /{label}/{application}-{profile}.yml
 /{application}-{profile}.properties
 /{label}/{application}-{profile}.Properties
-````
+```
+
 For more details on the Config Server config files refer to the documentation (http://docs.pivotal.io/spring-cloud-services/config-server/server.html)
 
 You could also have multiple branches in your Git repo, and in the Config Service instance, you can configure which branch to read the config information.
 
-````
+```
 master
 ------
 https://github.com/myorg/configurations
@@ -141,7 +142,7 @@ https://github.com/myorg/configurations
 |- myapp-development.yml
 |- myapp-production.yml
 
-````
+```
 
 ### Step 4
 ##### Configure the Spring Cloud Config Service Instance from the marketplace
@@ -163,11 +164,11 @@ https://github.com/myorg/configurations
 
 For Windows
 
-        `cf update-service student1-config-service -c "{\"git\": {\"uri\": \"https://github.com/rjain-pivotal/workshop-app-config.git\"}}"`
+        ```cf update-service student1-config-service -c "{\"git\": {\"uri\": \"https://github.com/rjain-pivotal/workshop-app-config.git\"}}"```
 
 For Mac/Linux
 
-        `cf update-service student1-config-service -c '{"git": {"uri": "https://github.com/rjain-pivotal/workshop-app-config.git"}}'`
+        ```cf update-service student1-config-service -c '{"git": {"uri": "https://github.com/rjain-pivotal/workshop-app-config.git"}}'```
 
 Note: The Git repository URL is the URL of your cloned git repo in Step 3. If you are using the instructor git url, you can specify that.
 

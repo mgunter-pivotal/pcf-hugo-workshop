@@ -66,10 +66,8 @@ Download the latest release of the autopilot plugin from the github releases pag
 
   On a Mac
   
-  ```bash
-  $ cd pcf-workspace-devops // This is the folder where you have saved the autopilot plugin
-  $ cf install-plugin autopilot
-  ````
+    $ cd pcf-workspace-devops // This is the folder where you have saved the autopilot plugin
+    $ cf install-plugin autopilot
 
   On Windows:
 
@@ -92,18 +90,17 @@ If you would like to inject build numbers in your app names here is a script you
 
     Usage: blue-green.sh <app-name> <build-number> <domain>
 
-
-  ```bash
-  $ ./blue-green.sh  cities-hello 1001 <YOUR INITIALS>
-  $ cf apps // You should see your app build 1001 and the Route
-  ```
+```bash
+$ ./blue-green.sh  cities-hello 1001 <YOUR INITIALS>
+$ cf apps // You should see your app build 1001 and the Route
+```
 
   Now push the new build 1002 of the app
 
-  ```bash
-  $ ./blue-green.sh  cities-hello 1002 example.com
-  $ cf apps // You should see your app build 1002 and the same route mapped to the new build
-  ```
+```bash
+$ ./blue-green.sh  cities-hello 1002 example.com
+$ cf apps // You should see your app build 1002 and the same route mapped to the new build
+```
 
 ##### Discussion
 

@@ -92,7 +92,6 @@ Note the URL once the application has been successfully pushed.
 
 
 ```bash
-----
 $ cf env <YOUR INIITALS>-cities-ui
 
 System-Provided:
