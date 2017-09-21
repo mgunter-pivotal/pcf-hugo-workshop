@@ -127,33 +127,33 @@ Change into the correct folder. Notice that we are going down two levels to the 
 
 Linux/Mac:
 
-    ```bash
-    cd pcf-dotnet-environment-viewer/ViewEnvironment
-    ```
+```bash
+cd pcf-dotnet-environment-viewer/ViewEnvironment
+```
 
 Windows:
 
-    ```
-    cd pcf-dotnet-environment-viewer\ViewEnvironment
-    ```
+```
+cd pcf-dotnet-environment-viewer\ViewEnvironment
+```
   
 ### Step 2
 ##### Login into Pivotal Cloud Foundry (if necessary)
 
 Each participant will have their own user ids and passwords.  
 
-    ```bash
-    $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-    Email: myuserid
-    Password: ••••••••
-    
-    Select a space (or press enter to skip):
-    1. development
-    2. test
-    3. production
-    
-    Select any one and stick to that space for the rest of the workshop.
-    ```
+```bash
+$ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+Email: myuserid
+Password: ••••••••
+
+Select a space (or press enter to skip):
+1. development
+2. test
+3. production
+
+Select any one and stick to that space for the rest of the workshop.
+```
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
@@ -165,17 +165,17 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Push the PCF DotNet Environment Viewer
 
-    ```bash
-    $ cf push <YOUR-INITIALS>-env 
-    // This will give an output which is similar to this
-    requested state: started
-    instances: 1/1
-    usage: 512M x 1 instances
-    urls: env-noninductive-nursling.app.cloud.rick-ross.com
-    last uploaded: Thu Aug 31 19:41:33 UTC 2017
-    stack: windows2012R2
-    buildpack: hwc_buildpack
-    ```
+```bash
+$ cf push <YOUR-INITIALS>-env 
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 512M x 1 instances
+urls: env-noninductive-nursling.app.cloud.rick-ross.com
+last uploaded: Thu Aug 31 19:41:33 UTC 2017
+stack: windows2012R2
+buildpack: hwc_buildpack
+```
 
 ### Step 5
 ##### Open the Application in a Browser
@@ -190,20 +190,20 @@ When you push the apps, PCF will provide an URL to access the application
 ##### Build the Dot Net Core Demo Application
 By this point, you should have cloned (or forked, or downloaded) the [Dot Net Core Repo:  https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample](https://github.com/rossr3-pivotal/asp-dot-net-core-2-sample).  Let's run through the steps to prepare the applicatio to be deployed to Cloud Foundry:
 
-    ```bash
-    $ cd asp-dot-net-core-2-sample
-    $ dotnet restore
-    $ dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
-    $ cf push <YOUR-INITIALS>-dotnetcore -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish --random-route 
-    // This will give an output which is similar to this
-    requested state: started
-    instances: 1/1
-    usage: 1G x 1 instances
-    urls: dotnetcore-rootless-eeriness.app.cloud.rick-ross.com
-    last uploaded: Sat Sep 2 17:46:35 UTC 2017
-    stack: cflinuxfs2
-    buildpack: ASP.NET Core (buildpack-1.0.25)
-    ```
+```bash
+$ cd asp-dot-net-core-2-sample
+$ dotnet restore
+$ dotnet publish -f netcoreapp2.0 -r ubuntu.14.04-x64
+$ cf push <YOUR-INITIALS>-dotnetcore -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish --random-route 
+// This will give an output which is similar to this
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: dotnetcore-rootless-eeriness.app.cloud.rick-ross.com
+last uploaded: Sat Sep 2 17:46:35 UTC 2017
+stack: cflinuxfs2
+buildpack: ASP.NET Core (buildpack-1.0.25)
+```
 
 ### Step 2
 ##### Open the Application in a Browser
