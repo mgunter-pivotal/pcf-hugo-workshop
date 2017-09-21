@@ -19,6 +19,17 @@ Prerequisites
 1. Install .NET Core 2.0
 
     [.NET Core](https://www.microsoft.com/net/core)
+    
+    To validate the installation, run the following command from a command prompt or shell:
+
+    ```bash
+    dotnet  --version
+    dotnet new console -o newapp
+    cd newapp
+    dotnet run
+    ```    
+    
+    If successful, you should see a Hello World! in the output. 
 
 2. Clone or Download the Dot Net Attendee Source Code
 
@@ -30,8 +41,8 @@ Prerequisites
 
 	Download the source code. Download as Zip file and save it in local folder
 
-	```bash
-	   unzip pcf-dotnet-environment-viewer-master.zip
+    ```bash
+    unzip pcf-dotnet-environment-viewer-master.zip
 	```
 	##### ---OR---
 
@@ -59,9 +70,10 @@ Prerequisites
 
 	Download the source code. Download as Zip file and save it in local folder
 
-	```bash
-	   unzip asp-dot-net-core-2-sample-master.zip
-	```
+    ```bash
+    unzip asp-dot-net-core-2-sample-master.zip
+    ```
+    
 	##### ---OR---
 
 	Fork and Clone
@@ -130,18 +142,18 @@ Windows:
 
 Each participant will have their own user ids and passwords.  
 
-  ```bash
-  $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
-  Email: myuserid
-  Password: ••••••••
-
-  Select a space (or press enter to skip):
-  1. development
-  2. test
-  3. production
-
-  Select any one and stick to that space for the rest of the workshop.
-  ```
+    ```bash
+    $ cf login -a https://api.sys.cloud.rick-ross.com --skip-ssl-validation
+    Email: myuserid
+    Password: ••••••••
+    
+    Select a space (or press enter to skip):
+    1. development
+    2. test
+    3. production
+    
+    Select any one and stick to that space for the rest of the workshop.
+    ```
 
 Login to the App Console at https://app.cloud.rick-ross.com
 
@@ -153,17 +165,17 @@ Login to the App Console at https://app.cloud.rick-ross.com
 
 Push the PCF DotNet Environment Viewer
 
-  ```bash
-  $ cf push <YOUR-INITIALS>-env 
-  // This will give an output which is similar to this
-  requested state: started
-  instances: 1/1
-  usage: 512M x 1 instances
-  urls: env-noninductive-nursling.app.cloud.rick-ross.com
-  last uploaded: Thu Aug 31 19:41:33 UTC 2017
-  stack: windows2012R2
-  buildpack: hwc_buildpack
-  ```
+    ```bash
+    $ cf push <YOUR-INITIALS>-env 
+    // This will give an output which is similar to this
+    requested state: started
+    instances: 1/1
+    usage: 512M x 1 instances
+    urls: env-noninductive-nursling.app.cloud.rick-ross.com
+    last uploaded: Thu Aug 31 19:41:33 UTC 2017
+    stack: windows2012R2
+    buildpack: hwc_buildpack
+    ```
 
 ### Step 5
 ##### Open the Application in a Browser
