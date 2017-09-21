@@ -69,18 +69,18 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 4. 
     To validate the installation, run the following command from a command prompt or shell:
 
-   ```bash
-   cf --version
-   ```
+    ```bash
+    cf --version
+    ```
 
 4. Curl for [Windows](http://winampplugins.co.uk/curl/)
    Or for [Mac] (http://pdb.finkproject.org/pdb/package.php/curl)
 
     To validate the installation, run the following command from a command prompt or shell:
         
-   ```bash
-   curl --version
-   ```
+    ```bash
+    curl --version
+    ```
 
 5. An account on your PCF Environment
 
