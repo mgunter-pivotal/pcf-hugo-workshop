@@ -164,11 +164,11 @@ https://github.com/myorg/configurations
 
 For Windows
 
-        ```cf update-service student1-config-service -c "{\"git\": {\"uri\": \"https://github.com/rjain-pivotal/workshop-app-config.git\"}}"```
+        `cf update-service student1-config-service -c "{\"git\": {\"uri\": \"https://github.com/rjain-pivotal/workshop-app-config.git\"}}"`
 
 For Mac/Linux
 
-        ```cf update-service student1-config-service -c '{"git": {"uri": "https://github.com/rjain-pivotal/workshop-app-config.git"}}'```
+        `cf update-service student1-config-service -c '{"git": {"uri": "https://github.com/rjain-pivotal/workshop-app-config.git"}}'`
 
 Note: The Git repository URL is the URL of your cloned git repo in Step 3. If you are using the instructor git url, you can specify that.
 
@@ -297,7 +297,7 @@ Let's walk through the code in the greeting-config app in the source repo (Step 
 
 1. Change the manifest.yml file in the greeting-config/ to reflect the name of the app and the config-service
 
-            ---
+        ---
         applications:
         - name: greeting-config
           memory: 1G
