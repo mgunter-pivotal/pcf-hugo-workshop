@@ -21,15 +21,31 @@ Prerequisites
 1. Java SDK 1.8+ [Java from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
     Set the JAVA_HOME variable to the installation dir, in case it is not automatically set
+    
+    To verify that you have installed it properly, run the following command from a command prompt or shell:
+          
+    ```bash
+    javac -version
+    ```
 
 2. Git CLI for [Windows](https://github.com/git-for-windows/git/releases/download/v2.9.0.windows.1/Git-2.9.0-64-bit.exe)
    or Git from [github.com](https://desktop.github.com)
 
+    If you have installed the Git command line, you can validate the installation by running the following command:
+        
+    ```bash
+    git --version
+    ```
+
 3. Cloud Foundry CLI for [Mac](https://github.com/cloudfoundry/cli/releases) or [Windows](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html#windows)
 
-4. Gradle for build (https://projects.eclipse.org/projects/tools.buildship)
+    To validate the installation, run the following command from a command prompt or shell:
 
-5. Clone or Download the Source Code
+    ```bash
+    cf --version
+    ```
+
+4. Clone or Download the Source Code
 
 	[PCF Workspace:  https://github.com/Pivotal-Field-Engineering/pcf-workspace-devops/](https://github.com/Pivotal-Field-Engineering/pcf-workspace-devops/)
 
@@ -39,9 +55,10 @@ Prerequisites
 
 	Download the source code. Download as Zip file and save it in local folder
 
-	```bash
-	   unzip pcf-workspace-devops-master.zip
-	```
+    ```bash
+    unzip pcf-workspace-devops-master.zip
+    ```
+    
 	##### ---OR---
 
 	Fork and Clone

@@ -66,7 +66,7 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
     ```
 
 3. Cloud Foundry CLI for [Mac](https://github.com/cloudfoundry/cli/releases) or [Windows](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html#windows)
-4. 
+
     To validate the installation, run the following command from a command prompt or shell:
 
     ```bash
