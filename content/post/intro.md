@@ -1,14 +1,14 @@
 +++
 Categories = ["agenda","workshop"]
 Tags = ["logistics","speakers"]
-date = "2017-08-29T07:44:03+04:00"
+date = "2017-11-08T21:44:03+04:00"
 title = "Welcome to the Pivotal Cloud Foundry Workshop @ Solera"
 type = "Introduction"
 weight = 1
 +++
 
 ##### Date and Time
-Date: **September 6 2017**
+Date: **November 8 2017**
 
 Time: **9:00 AM - 4:00 PM**
 
@@ -40,7 +40,7 @@ Click to get the Agenda, Prerequisites and Setup for the workshop.
 
 #### Speakers
 + Rick Ross - Platform Architect at Pivotal
-+ Brian Byers - Platform Architect at Pivotal
++ Jenny McLaughlin - Platform Architect at Pivotal
 
 
 ---
