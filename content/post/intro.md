@@ -12,7 +12,7 @@ Date: **November 8 2017**
 
 Time: **9:00 AM - 4:00 PM**
 
-Click to get the Agenda, Prerequisites and Setup for the workshop.
+Click on the title to get the Agenda, Prerequisites and Setup for the workshop.
 
 <!--more-->
 
