@@ -18,9 +18,13 @@ To deploy and configure a microservice and UI, leverage the platform for monitor
 Prerequisites
 --
 
-1. Java SDK 1.8+ [Java from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+1. Java SDK 1.8 [Java from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
+    **DO NOT use Java SDK 1.9**
+    
     Set the JAVA_HOME variable to the installation dir, in case it is not automatically set
+    
+    Add %JAVA_HOME%\bin to your PATH
     
     To verify that you have installed it properly, run the following command from a command prompt or shell:
           

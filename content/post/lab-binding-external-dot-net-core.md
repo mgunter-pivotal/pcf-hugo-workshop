@@ -146,13 +146,13 @@ Push the Fortune Teller Service
 On Linux/Mac:
 
 ```bash
-$ cf push -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
+$ cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish 
 ```
   
  On Windows: 
   
 ```bash
-cf push -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
+cf push <YOUR INITIALS>-fortuneservice -f manifest.yml -p bin\Debug\netcoreapp2.0\ubuntu.14.04-x64\publish
 ```
 
 Which will result in output of
@@ -162,7 +162,7 @@ Which will result in output of
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: fortuneservice.app.cloud.rick-ross.com
+urls: rr-fortuneservice.app.cloud.rick-ross.com
 last uploaded: Tue Sep 5 23:38:58 UTC 2017
 stack: cflinuxfs2
 buildpack: ASP.NET Core (buildpack-1.0.25)
@@ -171,7 +171,7 @@ buildpack: ASP.NET Core (buildpack-1.0.25)
 ### Step 5
 ##### Visit the Applicaiton in the Browser
 
-Open a browser and visit the /api/fortunes/random endpoint. For my service, this is http://fortuneservice.app.cloud.rick-ross.com/api/fortunes/random. Yours will be different.
+Open a browser and visit the /api/fortunes/random endpoint. For my service, this is http://rr-fortuneservice.app.cloud.rick-ross.com/api/fortunes/random. Yours will be different.
 
 <img src="/images/plain-fortune-service.png" alt="Git style="width: 40%;"/>
 
@@ -208,7 +208,7 @@ cf create-user-provided-service <YOUR INITIALS>-FortuneService -p "uri"
 uri>
 ```
 
-When prompted to enter the uri, enter in your URL of where your application lives. In my case, it is located here: http://fortuneservice.app.cloud.rick-ross.com/
+When prompted to enter the uri, enter in your URL of where your application lives. In my case, it is located here: http://rr-fortuneservice.app.cloud.rick-ross.com/
 
 If you want to double check your work, bring up Apps Manager, navigate to your org and space and look at the service you created. 
 
@@ -228,7 +228,7 @@ In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> p
 ```
 ---
 applications:
-- name: fortuneui
+- name: <YOUR INITIALS>-fortuneui
   env:
     ASPNETCORE_ENVIRONMENT: Production
   services:

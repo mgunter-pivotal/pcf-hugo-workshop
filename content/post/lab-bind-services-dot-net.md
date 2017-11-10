@@ -96,9 +96,11 @@ Next, edit the Dot Net Environment Viewer application with a manifest to help au
     wordpad.exe manifest.yml
     ````
 
-3. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for Environment Viewer. This step will require you to look at the documentation link above. 
+3. In the manifest.yml file, change the name from "env" to `<YOUR INITIALS>-env`
 
-4. Test your manifest by re-pushing your app with no parameters:
+4. Add the services binding `<YOUR INITIALS>-env-db` to your deployment manifest for Environment Viewer. This step will require you to look at the documentation link above. 
+
+5. Test your manifest by re-pushing your app with no parameters:
 
     ```bash
     $ cf push 
@@ -110,7 +112,7 @@ Next, edit the Dot Net Environment Viewer application with a manifest to help au
     
     > The default manifest file for an app is `manifest.yml` and it if is present, it is automatically picked without specifying the manifest file option (e.g. -f my-manifest-file.yml).
 
-5. Once you are comfortable of what we just did, let's clean up the resources. 
+6. Once you are comfortable of what we just did, let's clean up the resources. 
 
 
     ```bash

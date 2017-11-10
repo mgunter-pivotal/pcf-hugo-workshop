@@ -176,7 +176,7 @@ In a text editor, open up the manifest.yml file and change the <YOUR INITIALS> p
 ```
 ---
 applications:
-- name: foo
+- name: <YOUR INITIALS>-foo
   env:
     ASPNETCORE_ENVIRONMENT: development
   services:
@@ -188,7 +188,7 @@ Be sure to save the file before continuing.
 ### Step 6
 ##### Push the app
 
-Push the Fortune Teller Service 
+Push the Simple Cloud Foundry application
 
 On Linux/Mac:
 
@@ -209,7 +209,7 @@ Which will result in output of
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: rr-configapp.app.cloud.rick-ross.com
+urls: rr-foo.app.cloud.rick-ross.com
 last uploaded: Sun Sep 3 21:16:55 UTC 2017
 stack: cflinuxfs2
 buildpack: ASP.NET Core (buildpack-1.0.25)
