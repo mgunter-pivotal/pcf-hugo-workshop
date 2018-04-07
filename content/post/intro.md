@@ -2,15 +2,15 @@
 Categories = ["agenda","workshop"]
 Tags = ["logistics","speakers"]
 date = "2017-11-08T21:44:03+04:00"
-title = "Welcome to the Pivotal Cloud Foundry Workshop @ Solera"
+title = "Welcome to the Pivotal Cloud Foundry Workshop for Microsoft Azure"
 type = "Introduction"
 weight = 1
 +++
 
 ##### Date and Time
-Date: **November 8 2017**
+Date: **April 27 2018**
 
-Time: **9:00 AM - 4:00 PM**
+Time: **8:30 AM - 4:45 PM**
 
 Click on the title to get the Agenda, Prerequisites and Setup for the workshop.
 
@@ -18,29 +18,25 @@ Click on the title to get the Agenda, Prerequisites and Setup for the workshop.
 
 
 #### Agenda
-* Introductions
-* Marketplace Observations
-* Cloud Native Architecture
-* Introduction to Pivotal Cloud Foundry
-* PCF at Audatex
-* Lab: Deploying applications
-* Services
-* Lab: Bind to a Service
-* Logging and Metrics
-* Lab: Scale an Application
-* Lab: Bind to an external service
-* Domains and Routing
-* Lab: Blue Green Deployments
-* Buildpacks
-* Spring Cloud Services
-* Lab: Spring Cloud Services
-* Concourse
+* 08:30-09:00am  Arrival and Breakfast
+* 09:00-09:15am  Marketplace Observations
+* 09:15-10:00am  Microservices and Decomposing the Monolith
+* 10:00-10:15am  Cloud Native Concepts
+* 10:15-10:45am  Introduction to Pivotal Cloud Foundry
+* 10:45-11:00am  Morning Break
+* 11:00-12:30pm  Cloud-native Java with Spring Boot and Spring Cloud. A look at frameworks, patterns, anti-patterns, and tools for building Java apps in a cloud-native way.
+* 12:30-1:00pm  Lunch
+* 1:00-1:30pm   Lab: Getting Started with Springboot and Azure Dataservices
+* 1:30-4:30pm   Lab: Spring Cloud Services: Using Microservices Frameworks
+* 4:30-4:45pm   Wrap up
+
 
 ---
 
 #### Speakers
-+ Rick Ross - Platform Architect at Pivotal
-+ Jenny McLaughlin - Platform Architect at Pivotal
++ Matt Gunter - Platform Architect at Pivotal
++ Prasad Bopardikar - Platform Architect at Pivotal
++ Vince Russo - Platform Architect at Pivotal
 
 
 ---

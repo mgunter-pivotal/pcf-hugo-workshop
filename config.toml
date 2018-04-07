@@ -1,4 +1,4 @@
-baseurl = "http://pcf-solera-workshop.app.cloud.rick-ross.com"
+baseurl = "http://pcf-tampa-workshop.cfapps.io/"
 languageCode = "en-us"
 title = "Cloud Foundry Workshop"
 
@@ -28,9 +28,9 @@ copyright = "© Copyright 2017 Pivotal Software, Inc. All Rights Reserved."
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "Home"
-    description = "Solera · November 8 9:00 AM - 4:00 PM" # optional
+    description = "Tampa Azure Bootcamp for PCF · April 27 8:30 AM - 4:45 PM" # optional
     twitter = "pivotal" # optional
-    customer = "solera"
+    customer = "PCF-Azure"
     # headerCover = "images/headerCover.png" # optional
     # footerCover = "images/footerCover.png" # optional
     googleAnalyticsUserID = "" # optional

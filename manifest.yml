@@ -1,8 +1,7 @@
 ---
 applications:
-- name: pcf-solera-workshop
+- name: pcf-tampa-workshop
   memory: 64M
-  instances: 1
-  domain: app.cloud.rick-ross.com 
+  instances: 1 
   path: public
   buildpack: staticfile_buildpack
